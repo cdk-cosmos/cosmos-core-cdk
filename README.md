@@ -2,7 +2,7 @@
 
 This repo serves as a starting point for creating the core infra, that will be later used by consumer apps.
 
-# Bootstrapping
+# The Big Bang (Bootstrapping)
 
 Bootstrapping is a term use to get the core infra initially deployed manually so that it can take over and deploy its self. This can also be referred to as the chicken and egg situation.
 

@@ -13,32 +13,28 @@ const app = new App();
 const mgtEnvConfig = { account: "1111", region: "ap-southeast-2" };
 const devEnvConfig = { account: "2222", region: "ap-southeast-2" };
 
-// Project Infra
 const cosmos = new CosmosStack(app, "DemoCore", {
   tld: "cosmos.com",
   env: mgtEnvConfig
 });
 
-// Mgt Account Infra
 const mgtGalaxy = new GalaxyStack(cosmos, "Mgt", {
   cidr: "10.0.0.0/22"
 });
 
-// CiCd Infra
 const ciCd = new CiCdSolarSystemStack(mgtGalaxy, {
   cidr: mgtGalaxy.NetworkBuilder.addSubnet(24)
 });
 
-// Dev Account Infra
 const devGalaxy = new GalaxyStack(cosmos, "Dev", {
   cidr: "10.0.1.0/22",
   env: devEnvConfig
 });
 
-// Dev App Env Infra
-const dev = new EcsSolarSystemStack(devGalaxy, "Dev", {
-  cidr: mgtGalaxy.NetworkBuilder.addSubnet(24)
-});
+// Enable Solar Systems after bootstrap
 
-// Tst App Env Infra
-const tst = new EcsSolarSystemStack(devGalaxy, "Tst");
+// const dev = new EcsSolarSystemStack(devGalaxy, "Dev", {
+//   cidr: mgtGalaxy.NetworkBuilder.addSubnet(24)
+// });
+
+// const tst = new EcsSolarSystemStack(devGalaxy, "Tst");
