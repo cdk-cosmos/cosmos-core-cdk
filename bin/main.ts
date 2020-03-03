@@ -8,37 +8,41 @@ import {
   EcsSolarSystemStack
 } from "@cdk-cosmos/core";
 
+// Cdk App
 const app = new App();
 
+// Aws Env Config
 const mgtEnvConfig = { account: "1111", region: "ap-southeast-2" };
 const devEnvConfig = { account: "2222", region: "ap-southeast-2" };
 
-// Project Infra
+// Create the Cosmos (Core)
 const cosmos = new CosmosStack(app, "DemoCore", {
   tld: "cosmos.com",
   env: mgtEnvConfig
 });
 
-// Mgt Account Infra
+// Create an Mgt Galaxy with cidr
 const mgtGalaxy = new GalaxyStack(cosmos, "Mgt", {
   cidr: "10.0.0.0/22"
 });
 
-// CiCd Infra
+// Create the CiCd Solar System with /24 cidr
 const ciCd = new CiCdSolarSystemStack(mgtGalaxy, {
   cidr: mgtGalaxy.NetworkBuilder.addSubnet(24)
 });
 
-// Dev Account Infra
+// Create an Dev Galaxy with cidr
 const devGalaxy = new GalaxyStack(cosmos, "Dev", {
   cidr: "10.0.1.0/22",
   env: devEnvConfig
 });
 
-// Dev App Env Infra
-const dev = new EcsSolarSystemStack(devGalaxy, "Dev", {
-  cidr: mgtGalaxy.NetworkBuilder.addSubnet(24)
-});
+// TODO: Enable Solar Systems after bootstrap
 
-// Tst App Env Infra
-const tst = new EcsSolarSystemStack(devGalaxy, "Tst");
+// Create an Dev SolarSystem which is Ecr capable with cidr
+// const dev = new EcsSolarSystemStack(devGalaxy, "Dev", {
+//   cidr: mgtGalaxy.NetworkBuilder.addSubnet(24)
+// });
+
+// Create an Tst SolarSystem which is Ecr capable (cidr not needed, shared vpc in Galaxy level)
+// const tst = new EcsSolarSystemStack(devGalaxy, "Tst");
