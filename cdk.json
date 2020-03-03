@@ -1,0 +1,4 @@
+{
+  "app": "npx ts-node bin/main.ts",
+  "plugin": ["@cdk-cosmos/cdk-credentials-plugin"]
+}
