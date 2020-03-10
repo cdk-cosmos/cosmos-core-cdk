@@ -10,7 +10,7 @@ As mentioned we will have to bootstrap the core infra once manually, then the Ci
 
 Steps:
 
-1. Clone this repo (https://github.com/timpur/cosmos-core-cdk.git).
+1. Clone this repo (https://github.com/cdk-cosmos/cosmos-core-cdk.git).
 2. Run `npm install`
 3. Open `bin/main.ts` and change the project name from `DemoCore` to your core project name.
    - Also change cidr ranges for galaxies (Accounts)
