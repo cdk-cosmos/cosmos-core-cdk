@@ -37,8 +37,8 @@ const devGalaxy = new GalaxyStack(cosmos, "Dev", {
 
 // TODO: Enable Solar Systems after bootstrap
 
-// Create an Dev SolarSystem which is Ecr capable
+// // Create an Dev SolarSystem which is Ecr capable
 // const dev = new EcsSolarSystemStack(devGalaxy, "Dev");
 
-// Create an Tst SolarSystem which is Ecr capable
+// // Create an Tst SolarSystem which is Ecr capable
 // const tst = new EcsSolarSystemStack(devGalaxy, "Tst");
