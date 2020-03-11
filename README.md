@@ -12,7 +12,7 @@ Steps:
 
 1. Clone this repo (https://github.com/cdk-cosmos/cosmos-core-cdk.git).
 2. Run `npm install`
-3. Open `bin/main.ts` and change the project name from `DemoCore` to your core project name.
+3. Open `bin/main.ts` and change the project name from `Demo` to your core project name.
    - Also change cidr ranges for galaxies (Accounts)
    - Also Change anything else as needed.
    - Though We recommend you leave any solar system disabled during bootstrap (Enabled later).
