@@ -14,9 +14,9 @@
     "@aws-cdk/aws-codepipeline-actions": "^1.37.0",
     "@aws-cdk/aws-ecs": "^1.37.0",
     "@aws-cdk/core": "^1.37.0",
-    "@cdk-cosmos/cdk-credentials-plugin": "^0.4.1",
-    "@cdk-cosmos/core": "^0.4.1",
-    "@cosmos-building-blocks/pipeline": "^0.4.1",
+    "@cdk-cosmos/cdk-credentials-plugin": "^0.4.3",
+    "@cdk-cosmos/core": "^0.4.3",
+    "@cosmos-building-blocks/pipeline": "^0.4.3",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
