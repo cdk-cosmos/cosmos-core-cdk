@@ -34,16 +34,16 @@ const devGalaxy = new GalaxyCoreStack(cosmos, "Dev", {
   cidr: "10.0.1.0/24",
   env: devEnvConfig,
 });
-const devGalaxySharedVpc = devGalaxy.addSharedVpc();
+devGalaxy.addSharedVpc();
 
 // TODO: Enable Solar Systems after bootstrap
 
 // // Create an Dev Solar System which is Ecr capable
 // const dev = new EcsSolarSystemCoreStack(devGalaxy, "Dev", {
-//   vpc: devGalaxySharedVpc,
+//   vpc: devGalaxy.vpc,
 // });
 
 // // Create an Tst Solar System which is Ecr capable
 // const tst = new EcsSolarSystemCoreStack(devGalaxy, "Tst", {
-//   vpc: devGalaxySharedVpc,
+//   vpc: devGalaxy.vpc,
 // });
