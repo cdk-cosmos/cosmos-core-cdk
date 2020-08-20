@@ -4,8 +4,7 @@ import { App } from "@aws-cdk/core";
 import {
   CosmosCoreStack,
   GalaxyCoreStack,
-  CiCdSolarSystemCoreStack,
-  EcsSolarSystemCoreStack,
+  SolarSystemCoreStack,
 } from "@cdk-cosmos/core";
 
 // Cdk App
@@ -25,9 +24,10 @@ const cosmos = new CosmosCoreStack(app, "Demo", {
 const mgtGalaxy = new GalaxyCoreStack(cosmos, "Mgt");
 
 // Create the CiCd Solar System
-const ciCd = new CiCdSolarSystemCoreStack(mgtGalaxy, {
+const ciCd = new SolarSystemCoreStack(mgtGalaxy, "CiCd", {
   cidr: "10.0.0.0/24",
 });
+ciCd.addCiCd();
 
 // Create an Dev Galaxy with cidr
 const devGalaxy = new GalaxyCoreStack(cosmos, "Dev", {
@@ -39,11 +39,13 @@ devGalaxy.addSharedVpc();
 // TODO: Enable Solar Systems after bootstrap
 
 // // Create an Dev Solar System which is Ecr capable
-// const dev = new EcsSolarSystemCoreStack(devGalaxy, "Dev", {
-//   vpc: devGalaxy.vpc,
+// const dev = new SolarSystemCoreStack(devGalaxy, "Dev", {
+//   vpc: devGalaxy.sharedVpc?.vpc,
 // });
+// dev.addEcs();
 
 // // Create an Tst Solar System which is Ecr capable
-// const tst = new EcsSolarSystemCoreStack(devGalaxy, "Tst", {
-//   vpc: devGalaxy.vpc,
+// const tst = new SolarSystemCoreStack(devGalaxy, "Tst", {
+//   vpc: devGalaxy.sharedVpc?.vpc,
 // });
+// tst.addEcs();
