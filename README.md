@@ -58,7 +58,7 @@ At this point you have reached the minimal requirements to bootstrap your Cosmos
 
 6. Using the credentials of your AWS master account, log in to the AWS CLI.
 
-7. Run `npx cdk --app “node_modules/@cosmos-building-blocks/common/lib/cdk-toolkit/bootstrap-app.js” deploy`. 
+7. Run `npx cdk --app "node_modules/@cosmos-building-blocks/common/lib/cdk-toolkit/bootstrap-app.js" deploy`. 
 
 This will archive this Core and pass it as an asset to the Cosmos CDK Toolkit s3 bucket in your master account, and trigger the CodeBuild job to bootstrap your Core.
 
