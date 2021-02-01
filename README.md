@@ -1,28 +1,71 @@
-# Template Core App
+# Core Template
 
-This repo serves as a starting point for creating the core infra, that will be later used by consumer apps.
+This template is the boilerplate code for a Cosmos Core.
 
-# The Big Bang (Bootstrapping)
 
-Bootstrapping is a term use to get the core infra initially deployed manually so that it can take over and deploy its self. This can also be referred to as the chicken and egg situation.
+## The Big Bang: Bootstrapping the Cosmos
 
-As mentioned we will have to bootstrap the core infra once manually, then the CiCd stack will take over with the CdkPipeline (called DeployProject).
+This section describes the steps involved in bootstrapping a Cosmos Core.
 
-Steps:
+The Core template includes a CI/CD stack responsible for building and deploying your CDK and code, including any changes to the Core itself. However, before this CI/CD stack can deploy anything, it needs to be deployed itself. This is where the bootstrapping process comes in.
 
-1. Clone this repo (https://github.com/cdk-cosmos/cosmos-core-cdk.git).
-2. Run `npm install`
-3. Open `bin/main.ts` and change the project name from `Demo` to your core project name.
-   - Also change cidr ranges for galaxies (Accounts)
-   - Also Change anything else as needed.
-   - Though We recommend you leave any solar system disabled during bootstrap (Enabled later).
-4. Aws Cli Login.
-5. Bootstrap Ci/Cd, run `npx cdk deploy Core*CiCdSolarSystem`.
-6. Bootstrap Accounts, run `npx cdk deploy Core*${Account}Galaxy` for each additional aws account that you have, eg `Dev` or `Prd` (you will need to change credentials).
-7. Update git remote url `git remote set-url origin "https://git-codecommit.ap-southeast-2.amazonaws.com/v1/repos/core-cdk-repo"` (Please change region etc as required).
-8. Enable your Solar Systems, commit, push and then deploy your changes using the pipeline (`git commit` and `git push`, run Pipeline `Core-Cdk-Pipeline`).
-9. Your Done: Now use the core cdk pipeline to deploy any further changes to your app cdk code.
+Once the CI/CD stack and the other essential resources of a Core are deployed, further resources may be created by adding CDK or Cosmos constructs, or uncommenting the helper code included with this Core in `bin/main.ts`. It may then be deployed using the Core's own CDK CodePipeline.
 
-# Whats included
+## Steps
 
-TODO:
+1. Clone the this repository to your workstation (https://github.com/cdk-cosmos/cosmos-core-cdk.git)
+
+2. In the base directory of this project, run `npm install`.
+
+3. In `bin/main.ts`, complete the configuration objects with your account numbers and regions. You may also wish to add a `prdEnvConfig` object, or any that works with your particular multi-account pattern.
+
+```ts
+// AWS Env Config
+const mgtEnvConfig = { account: '<your management AWS account number here>', region: '<your preferred region here' };
+const devEnvConfig = { account: '<your dev AWS account number here>', region: '<your preferred region here' };
+```
+
+4. In `bin/main.ts`, change the project name from `Demo` to the name of your Core.
+
+```ts
+// Create the Cosmos (Core)
+const cosmos = new CosmosCoreStack(app, 'Demo', {
+  tld: 'cosmos.com',
+  env: mgtEnvConfig,
+});
+```
+
+5. Add the appropriate CIDR ranges to your CI/CD Solar System and Dev Galaxy:
+
+```ts
+// Create the CiCd Solar System
+const ciCd = new SolarSystemCoreStack(mgtGalaxy, 'CiCd', {
+  cidr: '<your-cicd-cidr-range-here>',
+});
+ciCd.addCiCd();
+
+// Create an Dev Galaxy with cidr
+const devGalaxy = new GalaxyCoreStack(cosmos, 'Dev', {
+  cidr: '<your-dev-galaxy-cidr-range-here>',
+  env: devEnvConfig,
+});
+devGalaxy.addSharedVpc();
+```
+
+At this point you have reached the minimal requirements to bootstrap your Cosmos Core. We don't recommend adding any further resources until the bootstrapping process below is complete.
+
+5. Follow the instructions [here](https://github.com/cdk-cosmos/cosmos/tree/develop/packages/%40cosmos-building-blocks/common#the-cosmos-cdk-toolkit) to deploy the Cosmos CDK Toolkit. 
+
+6. Using the credentials of your AWS master account, log in to the AWS CLI.
+
+7. Run `CORE=true npx cdk --app "node_modules/@cosmos-building-blocks/common/lib/cdk-toolkit/bootstrap-app.js" deploy`. 
+
+This will archive this Core and pass it as an asset to the Cosmos CDK Toolkit s3 bucket in your master account, and trigger the CodeBuild job to bootstrap your Core.
+
+8. A CodeCommit repository to house this newly customised Core was created as part of the bootstrapping process above. Update the git repository in this Core to point to the new CodeCommit repository. Replacing the `<your-region>` section with the region you selected in `Step 3`, run the following command:
+
+`git remote set-url origin "https://git-codecommit.<your-region>.amazonaws.com/v1/repos/core-cdk-repo"` 
+
+9. Add the changes made to this template by running `git add .`, commit the changes by running `git commit -m "inital commit"`, and push the changes to CodeCommit by running `git push`
+
+Your Core is bootstrapped. Any further changes may be deployed using the Core's own CDK CodePipeline.
