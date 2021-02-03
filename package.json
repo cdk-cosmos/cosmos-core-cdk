@@ -8,27 +8,29 @@
     "cdk": "cdk"
   },
   "dependencies": {
-    "@aws-cdk/aws-codebuild": "^1.72.0",
-    "@aws-cdk/aws-codecommit": "^1.72.0",
-    "@aws-cdk/aws-codepipeline": "^1.72.0",
-    "@aws-cdk/aws-codepipeline-actions": "^1.72.0",
-    "@aws-cdk/aws-ecs": "^1.72.0",
-    "@aws-cdk/core": "^1.72.0",
-    "@cdk-cosmos/cdk-credentials-plugin": "^0.7.1",
-    "@cdk-cosmos/core": "^0.7.1",
-    "@cosmos-building-blocks/pipeline": "^0.7.1",
-    "@cosmos-building-blocks/service": "^0.7.1",
+    "@aws-cdk/aws-elasticache": "^1.86.0",
+    "@aws-cdk/aws-codebuild": "^1.86.0",
+    "@aws-cdk/aws-codecommit": "^1.86.0",
+    "@aws-cdk/aws-codepipeline": "^1.86.0",
+    "@aws-cdk/aws-codepipeline-actions": "^1.86.0",
+    "@aws-cdk/aws-codestarconnections": "^1.86.0",
+    "@aws-cdk/aws-ecs": "^1.86.0",
+    "@aws-cdk/core": "^1.86.0",
+    "@cdk-cosmos/cdk-credentials-plugin": "^0.7.3",
+    "@cdk-cosmos/core": "^0.7.3",
+    "@cosmos-building-blocks/pipeline": "^0.7.3",
+    "@cosmos-building-blocks/service": "^0.7.3",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.72.0",
-    "@types/jest": "^25.1.0",
-    "@types/node": "^12.12.54",
-    "aws-cdk": "^1.72.0",
-    "aws-sdk": "^2.736.0",
-    "jest": "^25.1.0",
-    "ts-jest": "^25.1.0",
-    "ts-node": "^8.10.1",
-    "typescript": "^3.9.7"
+    "@aws-cdk/assert": "^1.86.0",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.22",
+    "aws-cdk": "^1.86.0",
+    "aws-sdk": "^2.834.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   }
 }

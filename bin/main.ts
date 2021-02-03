@@ -4,7 +4,7 @@ import { App } from '@aws-cdk/core';
 import { CosmosCoreStack, GalaxyCoreStack, SolarSystemCoreStack } from '@cdk-cosmos/core';
 
 // Cdk App
-const app = new App();
+export const app = new App();
 
 // Aws Env Config
 const mgtEnvConfig = { account: '1111', region: 'ap-southeast-2' };
