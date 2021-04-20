@@ -8,7 +8,7 @@ Object {
       "Export": Object {
         "Name": "CoreLibVersion",
       },
-      "Value": "0.7.3",
+      "Value": "0.8.1",
     },
     "CrossAccountExportServiceToken": Object {
       "Export": Object {
@@ -129,6 +129,7 @@ Object {
       "Type": "AWS::IAM::Role",
     },
     "CdkRepo": Object {
+      "DeletionPolicy": "Retain",
       "Properties": Object {
         "RepositoryDescription": "Core CDK Repo for Demo Cosmos.",
         "RepositoryName": "core-demo-cdk-repo",
@@ -140,6 +141,7 @@ Object {
         ],
       },
       "Type": "AWS::CodeCommit::Repository",
+      "UpdateReplacePolicy": "Retain",
     },
     "CustomCrossAccountExportsCustomResourceProviderHandler": Object {
       "DependsOn": Array [
@@ -331,6 +333,7 @@ Object {
       "Type": "AWS::KMS::Alias",
     },
     "SharedVpc": Object {
+      "DeletionPolicy": "Delete",
       "Properties": Object {
         "Tags": Array [
           Object {
@@ -386,6 +389,7 @@ Object {
         },
       },
       "Type": "AWS::CloudFormation::Stack",
+      "UpdateReplacePolicy": "Delete",
     },
   },
 }
@@ -790,6 +794,7 @@ Object {
   },
   "Resources": Object {
     "CiCd": Object {
+      "DeletionPolicy": "Delete",
       "Properties": Object {
         "Tags": Array [
           Object {
@@ -849,6 +854,20 @@ Object {
         },
       },
       "Type": "AWS::CloudFormation::Stack",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "ConfigVpcAzs": Object {
+      "Properties": Object {
+        "Name": "/Cosmos/Mgt/CiCd/VpcAzs",
+        "Tags": Object {
+          "cosmos": "Demo",
+          "cosmos:galaxy": "Mgt",
+          "cosmos:solarsystem": "CiCd",
+        },
+        "Type": "String",
+        "Value": "2",
+      },
+      "Type": "AWS::SSM::Parameter",
     },
     "PrivateZone": Object {
       "Properties": Object {
