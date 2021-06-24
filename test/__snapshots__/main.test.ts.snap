@@ -8,7 +8,7 @@ Object {
       "Export": Object {
         "Name": "CoreLibVersion",
       },
-      "Value": "0.8.1",
+      "Value": "0.8.11",
     },
     "CrossAccountExportServiceToken": Object {
       "Export": Object {
@@ -29,6 +29,17 @@ Object {
         "Fn::GetAtt": Array [
           "CdkRepo",
           "Name",
+        ],
+      },
+    },
+    "ExportsOutputFnGetAttCustomCrossAccountExportsCustomResourceProviderHandlerArn": Object {
+      "Export": Object {
+        "Name": "CoreDemoCosmos:ExportsOutputFnGetAttCustomCrossAccountExportsCustomResourceProviderHandlerArn8CE3D38E",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "CustomCrossAccountExportsCustomResourceProviderHandler",
+          "Arn",
         ],
       },
     },
@@ -72,16 +83,16 @@ Object {
     },
   },
   "Parameters": Object {
-    "AssetParameters1ea5f596092e17f736bb3858bcd92c7ee059b9b12c438d5bd66732f41b565e35ArtifactHash": Object {
-      "Description": "Artifact hash for asset \\"1ea5f596092e17f736bb3858bcd92c7ee059b9b12c438d5bd66732f41b565e35\\"",
+    "AssetParameters6e5b43f50767895e8526391d980fc819a2063aee982f7aa7f5776260c9f4ebc5ArtifactHash": Object {
+      "Description": "Artifact hash for asset \\"6e5b43f50767895e8526391d980fc819a2063aee982f7aa7f5776260c9f4ebc5\\"",
       "Type": "String",
     },
-    "AssetParameters1ea5f596092e17f736bb3858bcd92c7ee059b9b12c438d5bd66732f41b565e35S3Bucket": Object {
-      "Description": "S3 bucket for asset \\"1ea5f596092e17f736bb3858bcd92c7ee059b9b12c438d5bd66732f41b565e35\\"",
+    "AssetParameters6e5b43f50767895e8526391d980fc819a2063aee982f7aa7f5776260c9f4ebc5S3Bucket": Object {
+      "Description": "S3 bucket for asset \\"6e5b43f50767895e8526391d980fc819a2063aee982f7aa7f5776260c9f4ebc5\\"",
       "Type": "String",
     },
-    "AssetParameters1ea5f596092e17f736bb3858bcd92c7ee059b9b12c438d5bd66732f41b565e35S3VersionKey": Object {
-      "Description": "S3 key for asset version \\"1ea5f596092e17f736bb3858bcd92c7ee059b9b12c438d5bd66732f41b565e35\\"",
+    "AssetParameters6e5b43f50767895e8526391d980fc819a2063aee982f7aa7f5776260c9f4ebc5S3VersionKey": Object {
+      "Description": "S3 key for asset version \\"6e5b43f50767895e8526391d980fc819a2063aee982f7aa7f5776260c9f4ebc5\\"",
       "Type": "String",
     },
   },
@@ -150,7 +161,7 @@ Object {
       "Properties": Object {
         "Code": Object {
           "S3Bucket": Object {
-            "Ref": "AssetParameters1ea5f596092e17f736bb3858bcd92c7ee059b9b12c438d5bd66732f41b565e35S3Bucket",
+            "Ref": "AssetParameters6e5b43f50767895e8526391d980fc819a2063aee982f7aa7f5776260c9f4ebc5S3Bucket",
           },
           "S3Key": Object {
             "Fn::Join": Array [
@@ -163,7 +174,7 @@ Object {
                       "Fn::Split": Array [
                         "||",
                         Object {
-                          "Ref": "AssetParameters1ea5f596092e17f736bb3858bcd92c7ee059b9b12c438d5bd66732f41b565e35S3VersionKey",
+                          "Ref": "AssetParameters6e5b43f50767895e8526391d980fc819a2063aee982f7aa7f5776260c9f4ebc5S3VersionKey",
                         },
                       ],
                     },
@@ -176,7 +187,7 @@ Object {
                       "Fn::Split": Array [
                         "||",
                         Object {
-                          "Ref": "AssetParameters1ea5f596092e17f736bb3858bcd92c7ee059b9b12c438d5bd66732f41b565e35S3VersionKey",
+                          "Ref": "AssetParameters6e5b43f50767895e8526391d980fc819a2063aee982f7aa7f5776260c9f4ebc5S3VersionKey",
                         },
                       ],
                     },
@@ -221,17 +232,96 @@ Object {
 exports[`Entire App Stack Demo/Dev 1`] = `
 Object {
   "Description": "Cosmos Galaxy: Resources dependant on each Aws Account, like ShareVpc and CrossAccountRoles.",
+  "Outputs": Object {
+    "ExportsOutputFnGetAttSharedKeyArn": Object {
+      "Export": Object {
+        "Name": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedKeyArn0AA779F3",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "SharedKey",
+          "Arn",
+        ],
+      },
+    },
+    "ExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9CidrBlock": Object {
+      "Export": Object {
+        "Name": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9CidrBlock224C6C8A",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "SharedVpc",
+          "Outputs.DemoDevSharedVpcAC824BE9CidrBlock",
+        ],
+      },
+    },
+    "ExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9Ref": Object {
+      "Export": Object {
+        "Name": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9RefDF8A0FEF",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "SharedVpc",
+          "Outputs.DemoDevSharedVpcAC824BE9Ref",
+        ],
+      },
+    },
+    "ExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1RouteTableA83B117ERef": Object {
+      "Export": Object {
+        "Name": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1RouteTableA83B117ERefE043921D",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "SharedVpc",
+          "Outputs.DemoDevSharedVpcAppSubnet1RouteTableA83B117ERef",
+        ],
+      },
+    },
+    "ExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1SubnetA0856445Ref": Object {
+      "Export": Object {
+        "Name": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1SubnetA0856445RefD2152773",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "SharedVpc",
+          "Outputs.DemoDevSharedVpcAppSubnet1SubnetA0856445Ref",
+        ],
+      },
+    },
+    "ExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2RouteTable7CA859E1Ref": Object {
+      "Export": Object {
+        "Name": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2RouteTable7CA859E1Ref80F59782",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "SharedVpc",
+          "Outputs.DemoDevSharedVpcAppSubnet2RouteTable7CA859E1Ref",
+        ],
+      },
+    },
+    "ExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2Subnet0EE6AE15Ref": Object {
+      "Export": Object {
+        "Name": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2Subnet0EE6AE15RefB7A9BEAB",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "SharedVpc",
+          "Outputs.DemoDevSharedVpcAppSubnet2Subnet0EE6AE15Ref",
+        ],
+      },
+    },
+  },
   "Parameters": Object {
-    "AssetParameters6b0331de58605c631537c5a80dc5657360fb00adddb96eb7f3a67bfc75dd2a34ArtifactHash": Object {
-      "Description": "Artifact hash for asset \\"6b0331de58605c631537c5a80dc5657360fb00adddb96eb7f3a67bfc75dd2a34\\"",
+    "AssetParametersefed1e936542b510fe82289626085b357ca60425226edc7c7839e9712a86648dArtifactHash": Object {
+      "Description": "Artifact hash for asset \\"efed1e936542b510fe82289626085b357ca60425226edc7c7839e9712a86648d\\"",
       "Type": "String",
     },
-    "AssetParameters6b0331de58605c631537c5a80dc5657360fb00adddb96eb7f3a67bfc75dd2a34S3Bucket": Object {
-      "Description": "S3 bucket for asset \\"6b0331de58605c631537c5a80dc5657360fb00adddb96eb7f3a67bfc75dd2a34\\"",
+    "AssetParametersefed1e936542b510fe82289626085b357ca60425226edc7c7839e9712a86648dS3Bucket": Object {
+      "Description": "S3 bucket for asset \\"efed1e936542b510fe82289626085b357ca60425226edc7c7839e9712a86648d\\"",
       "Type": "String",
     },
-    "AssetParameters6b0331de58605c631537c5a80dc5657360fb00adddb96eb7f3a67bfc75dd2a34S3VersionKey": Object {
-      "Description": "S3 key for asset version \\"6b0331de58605c631537c5a80dc5657360fb00adddb96eb7f3a67bfc75dd2a34\\"",
+    "AssetParametersefed1e936542b510fe82289626085b357ca60425226edc7c7839e9712a86648dS3VersionKey": Object {
+      "Description": "S3 key for asset version \\"efed1e936542b510fe82289626085b357ca60425226edc7c7839e9712a86648d\\"",
       "Type": "String",
     },
   },
@@ -355,7 +445,7 @@ Object {
               },
               "/",
               Object {
-                "Ref": "AssetParameters6b0331de58605c631537c5a80dc5657360fb00adddb96eb7f3a67bfc75dd2a34S3Bucket",
+                "Ref": "AssetParametersefed1e936542b510fe82289626085b357ca60425226edc7c7839e9712a86648dS3Bucket",
               },
               "/",
               Object {
@@ -365,7 +455,7 @@ Object {
                     "Fn::Split": Array [
                       "||",
                       Object {
-                        "Ref": "AssetParameters6b0331de58605c631537c5a80dc5657360fb00adddb96eb7f3a67bfc75dd2a34S3VersionKey",
+                        "Ref": "AssetParametersefed1e936542b510fe82289626085b357ca60425226edc7c7839e9712a86648dS3VersionKey",
                       },
                     ],
                   },
@@ -378,7 +468,7 @@ Object {
                     "Fn::Split": Array [
                       "||",
                       Object {
-                        "Ref": "AssetParameters6b0331de58605c631537c5a80dc5657360fb00adddb96eb7f3a67bfc75dd2a34S3VersionKey",
+                        "Ref": "AssetParametersefed1e936542b510fe82289626085b357ca60425226edc7c7839e9712a86648dS3VersionKey",
                       },
                     ],
                   },
@@ -395,8 +485,1575 @@ Object {
 }
 `;
 
+exports[`Entire App Stack Demo/Dev/Dev 1`] = `
+Object {
+  "Description": "Cosmos SolarSystem: Resources dependant on each App Env, like Vpc and MainZone.",
+  "Outputs": Object {
+    "PrivateZoneZoneId": Object {
+      "Export": Object {
+        "Name": "CoreDevDevPrivateZoneId",
+      },
+      "Value": Object {
+        "Ref": "PrivateZone",
+      },
+    },
+    "PrivateZoneZoneName": Object {
+      "Export": Object {
+        "Name": "CoreDevDevPrivateZoneName",
+      },
+      "Value": "dev.internal",
+    },
+    "VpcAZs": Object {
+      "Export": Object {
+        "Name": "CoreDevDevVpcAZs",
+      },
+      "Value": "dummy1a,dummy1b",
+    },
+    "VpcCidrBlock": Object {
+      "Export": Object {
+        "Name": "CoreDevDevVpcCidrBlock",
+      },
+      "Value": Object {
+        "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9CidrBlock224C6C8A",
+      },
+    },
+    "VpcId": Object {
+      "Export": Object {
+        "Name": "CoreDevDevVpcId",
+      },
+      "Value": Object {
+        "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9RefDF8A0FEF",
+      },
+    },
+    "VpcIsolatedSubnetRouteTables": Object {
+      "Export": Object {
+        "Name": "CoreDevDevVpcIsolatedSubnetRouteTableIds",
+      },
+      "Value": Object {
+        "Fn::Join": Array [
+          ",",
+          Array [
+            Object {
+              "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1RouteTableA83B117ERefE043921D",
+            },
+            Object {
+              "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2RouteTable7CA859E1Ref80F59782",
+            },
+          ],
+        ],
+      },
+    },
+    "VpcIsolatedSubnets": Object {
+      "Export": Object {
+        "Name": "CoreDevDevVpcIsolatedSubnetIds",
+      },
+      "Value": Object {
+        "Fn::Join": Array [
+          ",",
+          Array [
+            Object {
+              "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1SubnetA0856445RefD2152773",
+            },
+            Object {
+              "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2Subnet0EE6AE15RefB7A9BEAB",
+            },
+          ],
+        ],
+      },
+    },
+    "ZoneId": Object {
+      "Export": Object {
+        "Name": "CoreDevDevZoneId",
+      },
+      "Value": Object {
+        "Ref": "Zone",
+      },
+    },
+    "ZoneName": Object {
+      "Export": Object {
+        "Name": "CoreDevDevZoneName",
+      },
+      "Value": "dev.cosmos.com",
+    },
+    "ZoneNameServers": Object {
+      "Export": Object {
+        "Name": "CoreDevDevZoneNameServers",
+      },
+      "Value": Object {
+        "Fn::Join": Array [
+          ",",
+          Object {
+            "Fn::GetAtt": Array [
+              "Zone",
+              "NameServers",
+            ],
+          },
+        ],
+      },
+    },
+  },
+  "Parameters": Object {
+    "AssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8ArtifactHash": Object {
+      "Description": "Artifact hash for asset \\"27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8\\"",
+      "Type": "String",
+    },
+    "AssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3Bucket": Object {
+      "Description": "S3 bucket for asset \\"27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8\\"",
+      "Type": "String",
+    },
+    "AssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKey": Object {
+      "Description": "S3 key for asset version \\"27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8\\"",
+      "Type": "String",
+    },
+    "AssetParameters38d79fa8dae57ed49ede3c548b0919a751ecb7945f59fd9435e5a14fe9ab7cfcArtifactHash": Object {
+      "Description": "Artifact hash for asset \\"38d79fa8dae57ed49ede3c548b0919a751ecb7945f59fd9435e5a14fe9ab7cfc\\"",
+      "Type": "String",
+    },
+    "AssetParameters38d79fa8dae57ed49ede3c548b0919a751ecb7945f59fd9435e5a14fe9ab7cfcS3Bucket": Object {
+      "Description": "S3 bucket for asset \\"38d79fa8dae57ed49ede3c548b0919a751ecb7945f59fd9435e5a14fe9ab7cfc\\"",
+      "Type": "String",
+    },
+    "AssetParameters38d79fa8dae57ed49ede3c548b0919a751ecb7945f59fd9435e5a14fe9ab7cfcS3VersionKey": Object {
+      "Description": "S3 key for asset version \\"38d79fa8dae57ed49ede3c548b0919a751ecb7945f59fd9435e5a14fe9ab7cfc\\"",
+      "Type": "String",
+    },
+  },
+  "Resources": Object {
+    "ConfigVpcAzs": Object {
+      "Properties": Object {
+        "Name": "/Cosmos/Dev/Dev/VpcAzs",
+        "Tags": Object {
+          "cosmos": "Demo",
+          "cosmos:galaxy": "Dev",
+          "cosmos:solarsystem": "Dev",
+        },
+        "Type": "String",
+        "Value": "2",
+      },
+      "Type": "AWS::SSM::Parameter",
+    },
+    "Ecs": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "Parameters": Object {
+          "referencetoDemoDevAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3BucketC86AAB80Ref": Object {
+            "Ref": "AssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3Bucket",
+          },
+          "referencetoDemoDevAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKey352522B4Ref": Object {
+            "Ref": "AssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKey",
+          },
+          "referencetoDemoDevZone48BB0AB3Ref": Object {
+            "Ref": "Zone",
+          },
+        },
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+        ],
+        "TemplateURL": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "https://s3.ap-southeast-2.",
+              Object {
+                "Ref": "AWS::URLSuffix",
+              },
+              "/",
+              Object {
+                "Ref": "AssetParameters38d79fa8dae57ed49ede3c548b0919a751ecb7945f59fd9435e5a14fe9ab7cfcS3Bucket",
+              },
+              "/",
+              Object {
+                "Fn::Select": Array [
+                  0,
+                  Object {
+                    "Fn::Split": Array [
+                      "||",
+                      Object {
+                        "Ref": "AssetParameters38d79fa8dae57ed49ede3c548b0919a751ecb7945f59fd9435e5a14fe9ab7cfcS3VersionKey",
+                      },
+                    ],
+                  },
+                ],
+              },
+              Object {
+                "Fn::Select": Array [
+                  1,
+                  Object {
+                    "Fn::Split": Array [
+                      "||",
+                      Object {
+                        "Ref": "AssetParameters38d79fa8dae57ed49ede3c548b0919a751ecb7945f59fd9435e5a14fe9ab7cfcS3VersionKey",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::CloudFormation::Stack",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "PrivateZone": Object {
+      "Properties": Object {
+        "HostedZoneConfig": Object {
+          "Comment": "Core Main Private Zone for Dev SolarSystem",
+        },
+        "HostedZoneTags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+        ],
+        "Name": "dev.internal.",
+        "VPCs": Array [
+          Object {
+            "VPCId": Object {
+              "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9RefDF8A0FEF",
+            },
+            "VPCRegion": "ap-southeast-2",
+          },
+        ],
+      },
+      "Type": "AWS::Route53::HostedZone",
+    },
+    "Zone": Object {
+      "Properties": Object {
+        "HostedZoneConfig": Object {
+          "Comment": "Core Main Zone for Dev SolarSystem",
+        },
+        "HostedZoneTags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+        ],
+        "Name": "dev.cosmos.com.",
+      },
+      "Type": "AWS::Route53::HostedZone",
+    },
+  },
+}
+`;
+
+exports[`Entire App Stack Demo/Dev/Dev/Ecs 1`] = `
+Object {
+  "Description": "Adds Ecs Features to the SolarSystem",
+  "Outputs": Object {
+    "AlbArn": Object {
+      "Export": Object {
+        "Name": "CoreDevDevAlbArn",
+      },
+      "Value": Object {
+        "Ref": "Alb",
+      },
+    },
+    "AlbDnsHostZoneId": Object {
+      "Export": Object {
+        "Name": "CoreDevDevAlbDnsHostZoneId",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "Alb",
+          "CanonicalHostedZoneID",
+        ],
+      },
+    },
+    "AlbDnsName": Object {
+      "Export": Object {
+        "Name": "CoreDevDevAlbDnsName",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "Alb",
+          "DNSName",
+        ],
+      },
+    },
+    "AlbHttpInternalListenerAlArn": Object {
+      "Export": Object {
+        "Name": "CoreDevDevHttpInternalListenerArn",
+      },
+      "Value": Object {
+        "Ref": "AlbHttpInternalListener",
+      },
+    },
+    "AlbHttpInternalListenerAlSecurityGroupId": Object {
+      "Export": Object {
+        "Name": "CoreDevDevHttpInternalListenerSecurityGroupId",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "AlbSecurityGroup",
+          "GroupId",
+        ],
+      },
+    },
+    "AlbHttpListenerAlArn": Object {
+      "Export": Object {
+        "Name": "CoreDevDevHttpListenerArn",
+      },
+      "Value": Object {
+        "Ref": "AlbHttpListener",
+      },
+    },
+    "AlbHttpListenerAlSecurityGroupId": Object {
+      "Export": Object {
+        "Name": "CoreDevDevHttpListenerSecurityGroupId",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "AlbSecurityGroup",
+          "GroupId",
+        ],
+      },
+    },
+    "AlbSecurityGroupId": Object {
+      "Export": Object {
+        "Name": "CoreDevDevAlbSecurityGroupId",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "AlbSecurityGroup",
+          "GroupId",
+        ],
+      },
+    },
+    "ClusterName": Object {
+      "Export": Object {
+        "Name": "CoreDevDevClusterName",
+      },
+      "Value": Object {
+        "Ref": "Cluster",
+      },
+    },
+    "ClusterSecurityGroup": Object {
+      "Export": Object {
+        "Name": "CoreDevDevClusterSecurityGroup",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "ClusterDefaultAutoScalingGroupInstanceSecurityGroup",
+          "GroupId",
+        ],
+      },
+    },
+  },
+  "Parameters": Object {
+    "SsmParameterValueawsserviceecsoptimizedamiamazonlinux2recommendedimageidC96584B6F00A464EAD1953AFF4B05118Parameter": Object {
+      "Default": "/aws/service/ecs/optimized-ami/amazon-linux-2/recommended/image_id",
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+    },
+    "referencetoDemoDevAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3BucketC86AAB80Ref": Object {
+      "Type": "String",
+    },
+    "referencetoDemoDevAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKey352522B4Ref": Object {
+      "Type": "String",
+    },
+    "referencetoDemoDevZone48BB0AB3Ref": Object {
+      "Type": "String",
+    },
+  },
+  "Resources": Object {
+    "Alb": Object {
+      "Properties": Object {
+        "LoadBalancerAttributes": Array [
+          Object {
+            "Key": "deletion_protection.enabled",
+            "Value": "false",
+          },
+        ],
+        "Name": "CoreDevDevAlb",
+        "Scheme": "internal",
+        "SecurityGroups": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "AlbSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "Subnets": Array [
+          Object {
+            "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1SubnetA0856445RefD2152773",
+          },
+          Object {
+            "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2Subnet0EE6AE15RefB7A9BEAB",
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+        ],
+        "Type": "application",
+      },
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+    },
+    "AlbHttpInternalListener": Object {
+      "Properties": Object {
+        "DefaultActions": Array [
+          Object {
+            "FixedResponseConfig": Object {
+              "ContentType": "text/plain",
+              "MessageBody": "Route Not Found.",
+              "StatusCode": "404",
+            },
+            "Type": "fixed-response",
+          },
+        ],
+        "LoadBalancerArn": Object {
+          "Ref": "Alb",
+        },
+        "Port": 8080,
+        "Protocol": "HTTP",
+      },
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+    },
+    "AlbHttpListener": Object {
+      "Properties": Object {
+        "DefaultActions": Array [
+          Object {
+            "FixedResponseConfig": Object {
+              "ContentType": "text/plain",
+              "MessageBody": "Route Not Found.",
+              "StatusCode": "404",
+            },
+            "Type": "fixed-response",
+          },
+        ],
+        "LoadBalancerArn": Object {
+          "Ref": "Alb",
+        },
+        "Port": 80,
+        "Protocol": "HTTP",
+      },
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+    },
+    "AlbRecord": Object {
+      "Properties": Object {
+        "AliasTarget": Object {
+          "DNSName": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "dualstack.",
+                Object {
+                  "Fn::GetAtt": Array [
+                    "Alb",
+                    "DNSName",
+                  ],
+                },
+              ],
+            ],
+          },
+          "HostedZoneId": Object {
+            "Fn::GetAtt": Array [
+              "Alb",
+              "CanonicalHostedZoneID",
+            ],
+          },
+        },
+        "HostedZoneId": Object {
+          "Ref": "referencetoDemoDevZone48BB0AB3Ref",
+        },
+        "Name": "dev.cosmos.com.",
+        "Type": "A",
+      },
+      "Type": "AWS::Route53::RecordSet",
+    },
+    "AlbSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "SecurityGroup for ALB.",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80,
+          },
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:8080",
+            "FromPort": 8080,
+            "IpProtocol": "tcp",
+            "ToPort": 8080,
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+        ],
+        "VpcId": Object {
+          "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9RefDF8A0FEF",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "Cluster": Object {
+      "Properties": Object {
+        "ClusterName": "CoreDevDevCluster",
+        "ClusterSettings": Array [
+          Object {
+            "Name": "containerInsights",
+            "Value": "enabled",
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+        ],
+      },
+      "Type": "AWS::ECS::Cluster",
+    },
+    "ClusterDefaultAutoScalingGroupASG": Object {
+      "CreationPolicy": Object {
+        "ResourceSignal": Object {
+          "Count": 1,
+        },
+      },
+      "Properties": Object {
+        "LaunchConfigurationName": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupLaunchConfig",
+        },
+        "MaxSize": "4",
+        "MinSize": "1",
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "PropagateAtLaunch": true,
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "PropagateAtLaunch": true,
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "PropagateAtLaunch": true,
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "PropagateAtLaunch": true,
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "PropagateAtLaunch": true,
+            "Value": "Demo/Dev/Dev/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+        "VPCZoneIdentifier": Array [
+          Object {
+            "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1SubnetA0856445RefD2152773",
+          },
+          Object {
+            "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2Subnet0EE6AE15RefB7A9BEAB",
+          },
+        ],
+      },
+      "Type": "AWS::AutoScaling::AutoScalingGroup",
+      "UpdatePolicy": Object {
+        "AutoScalingRollingUpdate": Object {
+          "MinSuccessfulInstancesPercent": 100,
+          "PauseTime": "PT10M",
+          "SuspendProcesses": Array [
+            "HealthCheck",
+            "ReplaceUnhealthy",
+            "AZRebalance",
+            "AlarmNotification",
+            "ScheduledActions",
+          ],
+          "WaitOnResourceSignals": true,
+        },
+        "AutoScalingScheduledAction": Object {
+          "IgnoreUnmodifiedGroupSizeProperties": true,
+        },
+      },
+    },
+    "ClusterDefaultAutoScalingGroupDrainECSHookFunction": Object {
+      "DependsOn": Array [
+        "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleDefaultPolicy",
+        "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "ZipFile": "import boto3, json, os, time
+
+ecs = boto3.client('ecs')
+autoscaling = boto3.client('autoscaling')
+
+
+def lambda_handler(event, context):
+  print(json.dumps(event))
+  cluster = os.environ['CLUSTER']
+  snsTopicArn = event['Records'][0]['Sns']['TopicArn']
+  lifecycle_event = json.loads(event['Records'][0]['Sns']['Message'])
+  instance_id = lifecycle_event.get('EC2InstanceId')
+  if not instance_id:
+    print('Got event without EC2InstanceId: %s', json.dumps(event))
+    return
+
+  instance_arn = container_instance_arn(cluster, instance_id)
+  print('Instance %s has container instance ARN %s' % (lifecycle_event['EC2InstanceId'], instance_arn))
+
+  if not instance_arn:
+    return
+
+  task_arns = container_instance_task_arns(cluster, instance_arn)
+  
+  if task_arns:
+    print('Instance ARN %s has task ARNs %s' % (instance_arn, ', '.join(task_arns)))
+
+  while has_tasks(cluster, instance_arn, task_arns):
+    time.sleep(10)
+
+  try:
+    print('Terminating instance %s' % instance_id)
+    autoscaling.complete_lifecycle_action(
+        LifecycleActionResult='CONTINUE',
+        **pick(lifecycle_event, 'LifecycleHookName', 'LifecycleActionToken', 'AutoScalingGroupName'))
+  except Exception as e:
+    # Lifecycle action may have already completed.
+    print(str(e))
+
+
+def container_instance_arn(cluster, instance_id):
+  \\"\\"\\"Turn an instance ID into a container instance ARN.\\"\\"\\"
+  arns = ecs.list_container_instances(cluster=cluster, filter='ec2InstanceId==' + instance_id)['containerInstanceArns']
+  if not arns:
+    return None
+  return arns[0]
+
+def container_instance_task_arns(cluster, instance_arn):
+  \\"\\"\\"Fetch tasks for a container instance ARN.\\"\\"\\"
+  arns = ecs.list_tasks(cluster=cluster, containerInstance=instance_arn)['taskArns']
+  return arns
+
+def has_tasks(cluster, instance_arn, task_arns):
+  \\"\\"\\"Return True if the instance is running tasks for the given cluster.\\"\\"\\"
+  instances = ecs.describe_container_instances(cluster=cluster, containerInstances=[instance_arn])['containerInstances']
+  if not instances:
+    return False
+  instance = instances[0]
+
+  if instance['status'] == 'ACTIVE':
+    # Start draining, then try again later
+    set_container_instance_to_draining(cluster, instance_arn)
+    return True
+
+  task_count = None
+
+  if task_arns:
+    # Fetch details for tasks running on the container instance
+    tasks = ecs.describe_tasks(cluster=cluster, tasks=task_arns)['tasks']
+    if tasks:
+      # Consider any non-stopped tasks as running
+      task_count = sum(task['lastStatus'] != 'STOPPED' for task in tasks) + instance['pendingTasksCount']
+  
+  if not task_count:
+    # Fallback to instance task counts if detailed task information is unavailable
+    task_count = instance['runningTasksCount'] + instance['pendingTasksCount']
+    
+  print('Instance %s has %s tasks' % (instance_arn, task_count))
+
+  return task_count > 0
+
+def set_container_instance_to_draining(cluster, instance_arn):
+  ecs.update_container_instances_state(
+      cluster=cluster,
+      containerInstances=[instance_arn], status='DRAINING')
+
+
+def pick(dct, *keys):
+  \\"\\"\\"Pick a subset of a dict.\\"\\"\\"
+  return {k: v for k, v in dct.items() if k in keys}
+",
+        },
+        "Environment": Object {
+          "Variables": Object {
+            "CLUSTER": Object {
+              "Ref": "Cluster",
+            },
+          },
+        },
+        "Handler": "index.lambda_handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole",
+            "Arn",
+          ],
+        },
+        "Runtime": "python3.6",
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Dev/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+        "Timeout": 310,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "ClusterDefaultAutoScalingGroupDrainECSHookFunctionAllowInvokeDemoDevEcsClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic626665F1": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "ClusterDefaultAutoScalingGroupDrainECSHookFunction",
+            "Arn",
+          ],
+        },
+        "Principal": "sns.amazonaws.com",
+        "SourceArn": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic",
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Dev/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleDefaultPolicy": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "ec2:DescribeInstances",
+                "ec2:DescribeInstanceAttribute",
+                "ec2:DescribeInstanceStatus",
+                "ec2:DescribeHosts",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": "autoscaling:CompleteLifecycleAction",
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::Join": Array [
+                  "",
+                  Array [
+                    "arn:",
+                    Object {
+                      "Ref": "AWS::Partition",
+                    },
+                    ":autoscaling:ap-southeast-2:2222:autoScalingGroup:*:autoScalingGroupName/",
+                    Object {
+                      "Ref": "ClusterDefaultAutoScalingGroupASG",
+                    },
+                  ],
+                ],
+              },
+            },
+            Object {
+              "Action": Array [
+                "ecs:DescribeContainerInstances",
+                "ecs:DescribeTasks",
+              ],
+              "Condition": Object {
+                "ArnEquals": Object {
+                  "ecs:cluster": Object {
+                    "Fn::GetAtt": Array [
+                      "Cluster",
+                      "Arn",
+                    ],
+                  },
+                },
+              },
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": Array [
+                "ecs:ListContainerInstances",
+                "ecs:SubmitContainerStateChange",
+                "ecs:SubmitTaskStateChange",
+              ],
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::GetAtt": Array [
+                  "Cluster",
+                  "Arn",
+                ],
+              },
+            },
+            Object {
+              "Action": Array [
+                "ecs:UpdateContainerInstancesState",
+                "ecs:ListTasks",
+              ],
+              "Condition": Object {
+                "ArnEquals": Object {
+                  "ecs:cluster": Object {
+                    "Fn::GetAtt": Array [
+                      "Cluster",
+                      "Arn",
+                    ],
+                  },
+                },
+              },
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleDefaultPolicy",
+        "Roles": Array [
+          Object {
+            "Ref": "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "ClusterDefaultAutoScalingGroupDrainECSHookFunctionTopic": Object {
+      "Properties": Object {
+        "Endpoint": Object {
+          "Fn::GetAtt": Array [
+            "ClusterDefaultAutoScalingGroupDrainECSHookFunction",
+            "Arn",
+          ],
+        },
+        "Protocol": "lambda",
+        "TopicArn": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+    "ClusterDefaultAutoScalingGroupInstanceProfile": Object {
+      "Properties": Object {
+        "Roles": Array [
+          Object {
+            "Ref": "ClusterDefaultAutoScalingGroupInstanceRole",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::InstanceProfile",
+    },
+    "ClusterDefaultAutoScalingGroupInstanceRole": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "ec2.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/AmazonSSMFullAccess",
+              ],
+            ],
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Dev/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "ClusterDefaultAutoScalingGroupInstanceRoleDefaultPolicy": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "cloudformation:SignalResource",
+              "Effect": "Allow",
+              "Resource": Object {
+                "Ref": "AWS::StackId",
+              },
+            },
+            Object {
+              "Action": Array [
+                "ecs:DeregisterContainerInstance",
+                "ecs:RegisterContainerInstance",
+                "ecs:Submit*",
+              ],
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::GetAtt": Array [
+                  "Cluster",
+                  "Arn",
+                ],
+              },
+            },
+            Object {
+              "Action": Array [
+                "ecs:Poll",
+                "ecs:StartTelemetrySession",
+              ],
+              "Condition": Object {
+                "ArnEquals": Object {
+                  "ecs:cluster": Object {
+                    "Fn::GetAtt": Array [
+                      "Cluster",
+                      "Arn",
+                    ],
+                  },
+                },
+              },
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": Array [
+                "ecs:DiscoverPollEndpoint",
+                "ecr:GetAuthorizationToken",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "ClusterDefaultAutoScalingGroupInstanceRoleDefaultPolicy",
+        "Roles": Array [
+          Object {
+            "Ref": "ClusterDefaultAutoScalingGroupInstanceRole",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "ClusterDefaultAutoScalingGroupInstanceSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "Demo/Dev/Dev/Ecs/Cluster/DefaultAutoScalingGroup/InstanceSecurityGroup",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Dev/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+        "VpcId": Object {
+          "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9RefDF8A0FEF",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "ClusterDefaultAutoScalingGroupLaunchConfig": Object {
+      "DependsOn": Array [
+        "ClusterDefaultAutoScalingGroupInstanceRoleDefaultPolicy",
+        "ClusterDefaultAutoScalingGroupInstanceRole",
+      ],
+      "Properties": Object {
+        "IamInstanceProfile": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupInstanceProfile",
+        },
+        "ImageId": Object {
+          "Ref": "SsmParameterValueawsserviceecsoptimizedamiamazonlinux2recommendedimageidC96584B6F00A464EAD1953AFF4B05118Parameter",
+        },
+        "InstanceType": "t3.medium",
+        "SecurityGroups": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "ClusterDefaultAutoScalingGroupInstanceSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "UserData": Object {
+          "Fn::Base64": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "#!/bin/bash
+function exitTrap(){
+exitCode=$?
+/opt/aws/bin/cfn-signal --stack ",
+                Object {
+                  "Ref": "AWS::StackName",
+                },
+                " --resource ClusterDefaultAutoScalingGroupASG --region ap-southeast-2 -e $exitCode || echo 'Failed to send Cloudformation Signal'
+}
+trap exitTrap EXIT
+exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+echo ECS_CLUSTER=",
+                Object {
+                  "Ref": "Cluster",
+                },
+                " >> /etc/ecs/ecs.config
+sudo iptables --insert FORWARD 1 --in-interface docker+ --destination 169.254.169.254/32 --jump DROP
+sudo service iptables save
+echo ECS_AWSVPC_BLOCK_IMDS=true >> /etc/ecs/ecs.config
+yum -y install aws-cfn-bootstrap || echo 'Failed to install aws-cfn-bootstrap for cfn-signal bin'",
+              ],
+            ],
+          },
+        },
+      },
+      "Type": "AWS::AutoScaling::LaunchConfiguration",
+    },
+    "ClusterDefaultAutoScalingGroupLifecycleHookDrainHook": Object {
+      "DependsOn": Array [
+        "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleDefaultPolicy",
+        "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRole",
+      ],
+      "Properties": Object {
+        "AutoScalingGroupName": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupASG",
+        },
+        "DefaultResult": "CONTINUE",
+        "HeartbeatTimeout": 300,
+        "LifecycleTransition": "autoscaling:EC2_INSTANCE_TERMINATING",
+        "NotificationTargetARN": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic",
+        },
+        "RoleARN": Object {
+          "Fn::GetAtt": Array [
+            "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRole",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::AutoScaling::LifecycleHook",
+    },
+    "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRole": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "autoscaling.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Dev/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleDefaultPolicy": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "kms:Decrypt",
+                "kms:GenerateDataKey",
+              ],
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedKeyArn0AA779F3",
+              },
+            },
+            Object {
+              "Action": "sns:Publish",
+              "Effect": "Allow",
+              "Resource": Object {
+                "Ref": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleDefaultPolicy",
+        "Roles": Array [
+          Object {
+            "Ref": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRole",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic": Object {
+      "Properties": Object {
+        "KmsMasterKeyId": Object {
+          "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedKeyArn0AA779F3",
+        },
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Dev/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "RebalanceEvent": Object {
+      "Properties": Object {
+        "EventPattern": Object {
+          "detail-type": Array [
+            "ECS Container Instance State Change",
+          ],
+          "source": Array [
+            "aws.ecs",
+          ],
+        },
+        "State": "ENABLED",
+        "Targets": Array [
+          Object {
+            "Arn": Object {
+              "Fn::GetAtt": Array [
+                "RebalanceFn",
+                "Arn",
+              ],
+            },
+            "Id": "Target0",
+          },
+        ],
+      },
+      "Type": "AWS::Events::Rule",
+    },
+    "RebalanceEventAllowEventRuleDemoDevEcsRebalanceFn6A0D4500": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "RebalanceFn",
+            "Arn",
+          ],
+        },
+        "Principal": "events.amazonaws.com",
+        "SourceArn": Object {
+          "Fn::GetAtt": Array [
+            "RebalanceEvent",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "RebalanceFn": Object {
+      "DependsOn": Array [
+        "RebalanceRole",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "referencetoDemoDevAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3BucketC86AAB80Ref",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "referencetoDemoDevAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKey352522B4Ref",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "referencetoDemoDevAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKey352522B4Ref",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Environment": Object {
+          "Variables": Object {
+            "CLUSTER": Object {
+              "Ref": "Cluster",
+            },
+            "TIMEOUT": "120",
+          },
+        },
+        "Handler": "index.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "RebalanceRole",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs14.x",
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+        ],
+        "Timeout": 600,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "RebalanceRole": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+        "Policies": Array [
+          Object {
+            "PolicyDocument": Object {
+              "Statement": Array [
+                Object {
+                  "Action": "ecs:*",
+                  "Condition": Object {
+                    "ArnEquals": Object {
+                      "ecs:cluster": Object {
+                        "Fn::GetAtt": Array [
+                          "Cluster",
+                          "Arn",
+                        ],
+                      },
+                    },
+                  },
+                  "Effect": "Allow",
+                  "Resource": "*",
+                },
+              ],
+              "Version": "2012-10-17",
+            },
+            "PolicyName": "default",
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Dev",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+  },
+}
+`;
+
 exports[`Entire App Stack Demo/Dev/SharedVpc 1`] = `
 Object {
+  "Outputs": Object {
+    "DemoDevSharedVpcAC824BE9CidrBlock": Object {
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "Vpc",
+          "CidrBlock",
+        ],
+      },
+    },
+    "DemoDevSharedVpcAC824BE9Ref": Object {
+      "Value": Object {
+        "Ref": "Vpc",
+      },
+    },
+    "DemoDevSharedVpcAppSubnet1RouteTableA83B117ERef": Object {
+      "Value": Object {
+        "Ref": "VpcAppSubnet1RouteTable",
+      },
+    },
+    "DemoDevSharedVpcAppSubnet1SubnetA0856445Ref": Object {
+      "Value": Object {
+        "Ref": "VpcAppSubnet1Subnet",
+      },
+    },
+    "DemoDevSharedVpcAppSubnet2RouteTable7CA859E1Ref": Object {
+      "Value": Object {
+        "Ref": "VpcAppSubnet2RouteTable",
+      },
+    },
+    "DemoDevSharedVpcAppSubnet2Subnet0EE6AE15Ref": Object {
+      "Value": Object {
+        "Ref": "VpcAppSubnet2Subnet",
+      },
+    },
+  },
   "Resources": Object {
     "Vpc": Object {
       "Properties": Object {
@@ -573,6 +2230,540 @@ Object {
       },
       "Type": "AWS::EC2::Subnet",
     },
+    "VpcCloudWatchLogsEndpoint": Object {
+      "Properties": Object {
+        "PrivateDnsEnabled": true,
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "VpcCloudWatchLogsEndpointSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "ServiceName": "com.amazonaws.ap-southeast-2.logs",
+        "SubnetIds": Array [
+          Object {
+            "Ref": "VpcAppSubnet1Subnet",
+          },
+          Object {
+            "Ref": "VpcAppSubnet2Subnet",
+          },
+        ],
+        "VpcEndpointType": "Interface",
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::VPCEndpoint",
+    },
+    "VpcCloudWatchLogsEndpointSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "Demo/Dev/SharedVpc/Vpc/CloudWatchLogsEndpoint/SecurityGroup",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": Object {
+              "Fn::GetAtt": Array [
+                "Vpc",
+                "CidrBlock",
+              ],
+            },
+            "Description": Object {
+              "Fn::Join": Array [
+                "",
+                Array [
+                  "from ",
+                  Object {
+                    "Fn::GetAtt": Array [
+                      "Vpc",
+                      "CidrBlock",
+                    ],
+                  },
+                  ":443",
+                ],
+              ],
+            },
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443,
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "SharedVpc",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/SharedVpc/Vpc",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "VpcEcrDockerEndpoint": Object {
+      "Properties": Object {
+        "PrivateDnsEnabled": true,
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "VpcEcrDockerEndpointSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "ServiceName": "com.amazonaws.ap-southeast-2.ecr.dkr",
+        "SubnetIds": Array [
+          Object {
+            "Ref": "VpcAppSubnet1Subnet",
+          },
+          Object {
+            "Ref": "VpcAppSubnet2Subnet",
+          },
+        ],
+        "VpcEndpointType": "Interface",
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::VPCEndpoint",
+    },
+    "VpcEcrDockerEndpointSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "Demo/Dev/SharedVpc/Vpc/EcrDockerEndpoint/SecurityGroup",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": Object {
+              "Fn::GetAtt": Array [
+                "Vpc",
+                "CidrBlock",
+              ],
+            },
+            "Description": Object {
+              "Fn::Join": Array [
+                "",
+                Array [
+                  "from ",
+                  Object {
+                    "Fn::GetAtt": Array [
+                      "Vpc",
+                      "CidrBlock",
+                    ],
+                  },
+                  ":443",
+                ],
+              ],
+            },
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443,
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "SharedVpc",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/SharedVpc/Vpc",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "VpcEcrEndpoint": Object {
+      "Properties": Object {
+        "PrivateDnsEnabled": true,
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "VpcEcrEndpointSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "ServiceName": "com.amazonaws.ap-southeast-2.ecr.api",
+        "SubnetIds": Array [
+          Object {
+            "Ref": "VpcAppSubnet1Subnet",
+          },
+          Object {
+            "Ref": "VpcAppSubnet2Subnet",
+          },
+        ],
+        "VpcEndpointType": "Interface",
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::VPCEndpoint",
+    },
+    "VpcEcrEndpointSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "Demo/Dev/SharedVpc/Vpc/EcrEndpoint/SecurityGroup",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": Object {
+              "Fn::GetAtt": Array [
+                "Vpc",
+                "CidrBlock",
+              ],
+            },
+            "Description": Object {
+              "Fn::Join": Array [
+                "",
+                Array [
+                  "from ",
+                  Object {
+                    "Fn::GetAtt": Array [
+                      "Vpc",
+                      "CidrBlock",
+                    ],
+                  },
+                  ":443",
+                ],
+              ],
+            },
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443,
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "SharedVpc",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/SharedVpc/Vpc",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "VpcEcsAgentEndpoint": Object {
+      "Properties": Object {
+        "PrivateDnsEnabled": true,
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "VpcEcsAgentEndpointSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "ServiceName": "com.amazonaws.ap-southeast-2.ecs-agent",
+        "SubnetIds": Array [
+          Object {
+            "Ref": "VpcAppSubnet1Subnet",
+          },
+          Object {
+            "Ref": "VpcAppSubnet2Subnet",
+          },
+        ],
+        "VpcEndpointType": "Interface",
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::VPCEndpoint",
+    },
+    "VpcEcsAgentEndpointSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "Demo/Dev/SharedVpc/Vpc/EcsAgentEndpoint/SecurityGroup",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": Object {
+              "Fn::GetAtt": Array [
+                "Vpc",
+                "CidrBlock",
+              ],
+            },
+            "Description": Object {
+              "Fn::Join": Array [
+                "",
+                Array [
+                  "from ",
+                  Object {
+                    "Fn::GetAtt": Array [
+                      "Vpc",
+                      "CidrBlock",
+                    ],
+                  },
+                  ":443",
+                ],
+              ],
+            },
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443,
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "SharedVpc",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/SharedVpc/Vpc",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "VpcEcsEndpoint": Object {
+      "Properties": Object {
+        "PrivateDnsEnabled": true,
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "VpcEcsEndpointSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "ServiceName": "com.amazonaws.ap-southeast-2.ecs",
+        "SubnetIds": Array [
+          Object {
+            "Ref": "VpcAppSubnet1Subnet",
+          },
+          Object {
+            "Ref": "VpcAppSubnet2Subnet",
+          },
+        ],
+        "VpcEndpointType": "Interface",
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::VPCEndpoint",
+    },
+    "VpcEcsEndpointSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "Demo/Dev/SharedVpc/Vpc/EcsEndpoint/SecurityGroup",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": Object {
+              "Fn::GetAtt": Array [
+                "Vpc",
+                "CidrBlock",
+              ],
+            },
+            "Description": Object {
+              "Fn::Join": Array [
+                "",
+                Array [
+                  "from ",
+                  Object {
+                    "Fn::GetAtt": Array [
+                      "Vpc",
+                      "CidrBlock",
+                    ],
+                  },
+                  ":443",
+                ],
+              ],
+            },
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443,
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "SharedVpc",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/SharedVpc/Vpc",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "VpcEcsTelemetryEndpoint": Object {
+      "Properties": Object {
+        "PrivateDnsEnabled": true,
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "VpcEcsTelemetryEndpointSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "ServiceName": "com.amazonaws.ap-southeast-2.ecs-telemetry",
+        "SubnetIds": Array [
+          Object {
+            "Ref": "VpcAppSubnet1Subnet",
+          },
+          Object {
+            "Ref": "VpcAppSubnet2Subnet",
+          },
+        ],
+        "VpcEndpointType": "Interface",
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::VPCEndpoint",
+    },
+    "VpcEcsTelemetryEndpointSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "Demo/Dev/SharedVpc/Vpc/EcsTelemetryEndpoint/SecurityGroup",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": Object {
+              "Fn::GetAtt": Array [
+                "Vpc",
+                "CidrBlock",
+              ],
+            },
+            "Description": Object {
+              "Fn::Join": Array [
+                "",
+                Array [
+                  "from ",
+                  Object {
+                    "Fn::GetAtt": Array [
+                      "Vpc",
+                      "CidrBlock",
+                    ],
+                  },
+                  ":443",
+                ],
+              ],
+            },
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443,
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "SharedVpc",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/SharedVpc/Vpc",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
     "VpcS3Gateway": Object {
       "Properties": Object {
         "RouteTableIds": Array [
@@ -601,6 +2792,1828 @@ Object {
         },
       },
       "Type": "AWS::EC2::VPCEndpoint",
+    },
+    "VpcSsmEndpoint": Object {
+      "Properties": Object {
+        "PrivateDnsEnabled": true,
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "VpcSsmEndpointSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "ServiceName": "com.amazonaws.ap-southeast-2.ssm",
+        "SubnetIds": Array [
+          Object {
+            "Ref": "VpcAppSubnet1Subnet",
+          },
+          Object {
+            "Ref": "VpcAppSubnet2Subnet",
+          },
+        ],
+        "VpcEndpointType": "Interface",
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::VPCEndpoint",
+    },
+    "VpcSsmEndpointSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "Demo/Dev/SharedVpc/Vpc/SsmEndpoint/SecurityGroup",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": Object {
+              "Fn::GetAtt": Array [
+                "Vpc",
+                "CidrBlock",
+              ],
+            },
+            "Description": Object {
+              "Fn::Join": Array [
+                "",
+                Array [
+                  "from ",
+                  Object {
+                    "Fn::GetAtt": Array [
+                      "Vpc",
+                      "CidrBlock",
+                    ],
+                  },
+                  ":443",
+                ],
+              ],
+            },
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443,
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "SharedVpc",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/SharedVpc/Vpc",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "VpcSsmMessageEndpoint": Object {
+      "Properties": Object {
+        "PrivateDnsEnabled": true,
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "VpcSsmMessageEndpointSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "ServiceName": "com.amazonaws.ap-southeast-2.ssmmessages",
+        "SubnetIds": Array [
+          Object {
+            "Ref": "VpcAppSubnet1Subnet",
+          },
+          Object {
+            "Ref": "VpcAppSubnet2Subnet",
+          },
+        ],
+        "VpcEndpointType": "Interface",
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::VPCEndpoint",
+    },
+    "VpcSsmMessageEndpointSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "Demo/Dev/SharedVpc/Vpc/SsmMessageEndpoint/SecurityGroup",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": Object {
+              "Fn::GetAtt": Array [
+                "Vpc",
+                "CidrBlock",
+              ],
+            },
+            "Description": Object {
+              "Fn::Join": Array [
+                "",
+                Array [
+                  "from ",
+                  Object {
+                    "Fn::GetAtt": Array [
+                      "Vpc",
+                      "CidrBlock",
+                    ],
+                  },
+                  ":443",
+                ],
+              ],
+            },
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443,
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "SharedVpc",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/SharedVpc/Vpc",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "Vpc",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+  },
+}
+`;
+
+exports[`Entire App Stack Demo/Dev/Tst 1`] = `
+Object {
+  "Description": "Cosmos SolarSystem: Resources dependant on each App Env, like Vpc and MainZone.",
+  "Outputs": Object {
+    "PrivateZoneZoneId": Object {
+      "Export": Object {
+        "Name": "CoreDevTstPrivateZoneId",
+      },
+      "Value": Object {
+        "Ref": "PrivateZone",
+      },
+    },
+    "PrivateZoneZoneName": Object {
+      "Export": Object {
+        "Name": "CoreDevTstPrivateZoneName",
+      },
+      "Value": "tst.internal",
+    },
+    "VpcAZs": Object {
+      "Export": Object {
+        "Name": "CoreDevTstVpcAZs",
+      },
+      "Value": "dummy1a,dummy1b",
+    },
+    "VpcCidrBlock": Object {
+      "Export": Object {
+        "Name": "CoreDevTstVpcCidrBlock",
+      },
+      "Value": Object {
+        "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9CidrBlock224C6C8A",
+      },
+    },
+    "VpcId": Object {
+      "Export": Object {
+        "Name": "CoreDevTstVpcId",
+      },
+      "Value": Object {
+        "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9RefDF8A0FEF",
+      },
+    },
+    "VpcIsolatedSubnetRouteTables": Object {
+      "Export": Object {
+        "Name": "CoreDevTstVpcIsolatedSubnetRouteTableIds",
+      },
+      "Value": Object {
+        "Fn::Join": Array [
+          ",",
+          Array [
+            Object {
+              "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1RouteTableA83B117ERefE043921D",
+            },
+            Object {
+              "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2RouteTable7CA859E1Ref80F59782",
+            },
+          ],
+        ],
+      },
+    },
+    "VpcIsolatedSubnets": Object {
+      "Export": Object {
+        "Name": "CoreDevTstVpcIsolatedSubnetIds",
+      },
+      "Value": Object {
+        "Fn::Join": Array [
+          ",",
+          Array [
+            Object {
+              "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1SubnetA0856445RefD2152773",
+            },
+            Object {
+              "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2Subnet0EE6AE15RefB7A9BEAB",
+            },
+          ],
+        ],
+      },
+    },
+    "ZoneId": Object {
+      "Export": Object {
+        "Name": "CoreDevTstZoneId",
+      },
+      "Value": Object {
+        "Ref": "Zone",
+      },
+    },
+    "ZoneName": Object {
+      "Export": Object {
+        "Name": "CoreDevTstZoneName",
+      },
+      "Value": "tst.cosmos.com",
+    },
+    "ZoneNameServers": Object {
+      "Export": Object {
+        "Name": "CoreDevTstZoneNameServers",
+      },
+      "Value": Object {
+        "Fn::Join": Array [
+          ",",
+          Object {
+            "Fn::GetAtt": Array [
+              "Zone",
+              "NameServers",
+            ],
+          },
+        ],
+      },
+    },
+  },
+  "Parameters": Object {
+    "AssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8ArtifactHash": Object {
+      "Description": "Artifact hash for asset \\"27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8\\"",
+      "Type": "String",
+    },
+    "AssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3Bucket": Object {
+      "Description": "S3 bucket for asset \\"27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8\\"",
+      "Type": "String",
+    },
+    "AssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKey": Object {
+      "Description": "S3 key for asset version \\"27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8\\"",
+      "Type": "String",
+    },
+    "AssetParameters92f7fbc9f21c55307dca16c2bd0f1fe2a0bd3358bb03cc5f1d5699d0eadaa965ArtifactHash": Object {
+      "Description": "Artifact hash for asset \\"92f7fbc9f21c55307dca16c2bd0f1fe2a0bd3358bb03cc5f1d5699d0eadaa965\\"",
+      "Type": "String",
+    },
+    "AssetParameters92f7fbc9f21c55307dca16c2bd0f1fe2a0bd3358bb03cc5f1d5699d0eadaa965S3Bucket": Object {
+      "Description": "S3 bucket for asset \\"92f7fbc9f21c55307dca16c2bd0f1fe2a0bd3358bb03cc5f1d5699d0eadaa965\\"",
+      "Type": "String",
+    },
+    "AssetParameters92f7fbc9f21c55307dca16c2bd0f1fe2a0bd3358bb03cc5f1d5699d0eadaa965S3VersionKey": Object {
+      "Description": "S3 key for asset version \\"92f7fbc9f21c55307dca16c2bd0f1fe2a0bd3358bb03cc5f1d5699d0eadaa965\\"",
+      "Type": "String",
+    },
+  },
+  "Resources": Object {
+    "ConfigVpcAzs": Object {
+      "Properties": Object {
+        "Name": "/Cosmos/Dev/Tst/VpcAzs",
+        "Tags": Object {
+          "cosmos": "Demo",
+          "cosmos:galaxy": "Dev",
+          "cosmos:solarsystem": "Tst",
+        },
+        "Type": "String",
+        "Value": "2",
+      },
+      "Type": "AWS::SSM::Parameter",
+    },
+    "Ecs": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "Parameters": Object {
+          "referencetoDemoDevTstAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3BucketBFF32296Ref": Object {
+            "Ref": "AssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3Bucket",
+          },
+          "referencetoDemoDevTstAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKeyDE4CE853Ref": Object {
+            "Ref": "AssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKey",
+          },
+          "referencetoDemoDevTstZoneEA25F9E7Ref": Object {
+            "Ref": "Zone",
+          },
+        },
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+        ],
+        "TemplateURL": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "https://s3.ap-southeast-2.",
+              Object {
+                "Ref": "AWS::URLSuffix",
+              },
+              "/",
+              Object {
+                "Ref": "AssetParameters92f7fbc9f21c55307dca16c2bd0f1fe2a0bd3358bb03cc5f1d5699d0eadaa965S3Bucket",
+              },
+              "/",
+              Object {
+                "Fn::Select": Array [
+                  0,
+                  Object {
+                    "Fn::Split": Array [
+                      "||",
+                      Object {
+                        "Ref": "AssetParameters92f7fbc9f21c55307dca16c2bd0f1fe2a0bd3358bb03cc5f1d5699d0eadaa965S3VersionKey",
+                      },
+                    ],
+                  },
+                ],
+              },
+              Object {
+                "Fn::Select": Array [
+                  1,
+                  Object {
+                    "Fn::Split": Array [
+                      "||",
+                      Object {
+                        "Ref": "AssetParameters92f7fbc9f21c55307dca16c2bd0f1fe2a0bd3358bb03cc5f1d5699d0eadaa965S3VersionKey",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::CloudFormation::Stack",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "PrivateZone": Object {
+      "Properties": Object {
+        "HostedZoneConfig": Object {
+          "Comment": "Core Main Private Zone for Tst SolarSystem",
+        },
+        "HostedZoneTags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+        ],
+        "Name": "tst.internal.",
+        "VPCs": Array [
+          Object {
+            "VPCId": Object {
+              "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9RefDF8A0FEF",
+            },
+            "VPCRegion": "ap-southeast-2",
+          },
+        ],
+      },
+      "Type": "AWS::Route53::HostedZone",
+    },
+    "Zone": Object {
+      "Properties": Object {
+        "HostedZoneConfig": Object {
+          "Comment": "Core Main Zone for Tst SolarSystem",
+        },
+        "HostedZoneTags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+        ],
+        "Name": "tst.cosmos.com.",
+      },
+      "Type": "AWS::Route53::HostedZone",
+    },
+  },
+}
+`;
+
+exports[`Entire App Stack Demo/Dev/Tst/Ecs 1`] = `
+Object {
+  "Description": "Adds Ecs Features to the SolarSystem",
+  "Outputs": Object {
+    "AlbArn": Object {
+      "Export": Object {
+        "Name": "CoreDevTstAlbArn",
+      },
+      "Value": Object {
+        "Ref": "Alb",
+      },
+    },
+    "AlbDnsHostZoneId": Object {
+      "Export": Object {
+        "Name": "CoreDevTstAlbDnsHostZoneId",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "Alb",
+          "CanonicalHostedZoneID",
+        ],
+      },
+    },
+    "AlbDnsName": Object {
+      "Export": Object {
+        "Name": "CoreDevTstAlbDnsName",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "Alb",
+          "DNSName",
+        ],
+      },
+    },
+    "AlbHttpInternalListenerAlArn": Object {
+      "Export": Object {
+        "Name": "CoreDevTstHttpInternalListenerArn",
+      },
+      "Value": Object {
+        "Ref": "AlbHttpInternalListener",
+      },
+    },
+    "AlbHttpInternalListenerAlSecurityGroupId": Object {
+      "Export": Object {
+        "Name": "CoreDevTstHttpInternalListenerSecurityGroupId",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "AlbSecurityGroup",
+          "GroupId",
+        ],
+      },
+    },
+    "AlbHttpListenerAlArn": Object {
+      "Export": Object {
+        "Name": "CoreDevTstHttpListenerArn",
+      },
+      "Value": Object {
+        "Ref": "AlbHttpListener",
+      },
+    },
+    "AlbHttpListenerAlSecurityGroupId": Object {
+      "Export": Object {
+        "Name": "CoreDevTstHttpListenerSecurityGroupId",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "AlbSecurityGroup",
+          "GroupId",
+        ],
+      },
+    },
+    "AlbSecurityGroupId": Object {
+      "Export": Object {
+        "Name": "CoreDevTstAlbSecurityGroupId",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "AlbSecurityGroup",
+          "GroupId",
+        ],
+      },
+    },
+    "ClusterName": Object {
+      "Export": Object {
+        "Name": "CoreDevTstClusterName",
+      },
+      "Value": Object {
+        "Ref": "Cluster",
+      },
+    },
+    "ClusterSecurityGroup": Object {
+      "Export": Object {
+        "Name": "CoreDevTstClusterSecurityGroup",
+      },
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "ClusterDefaultAutoScalingGroupInstanceSecurityGroup",
+          "GroupId",
+        ],
+      },
+    },
+  },
+  "Parameters": Object {
+    "SsmParameterValueawsserviceecsoptimizedamiamazonlinux2recommendedimageidC96584B6F00A464EAD1953AFF4B05118Parameter": Object {
+      "Default": "/aws/service/ecs/optimized-ami/amazon-linux-2/recommended/image_id",
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+    },
+    "referencetoDemoDevTstAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3BucketBFF32296Ref": Object {
+      "Type": "String",
+    },
+    "referencetoDemoDevTstAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKeyDE4CE853Ref": Object {
+      "Type": "String",
+    },
+    "referencetoDemoDevTstZoneEA25F9E7Ref": Object {
+      "Type": "String",
+    },
+  },
+  "Resources": Object {
+    "Alb": Object {
+      "Properties": Object {
+        "LoadBalancerAttributes": Array [
+          Object {
+            "Key": "deletion_protection.enabled",
+            "Value": "false",
+          },
+        ],
+        "Name": "CoreDevTstAlb",
+        "Scheme": "internal",
+        "SecurityGroups": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "AlbSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "Subnets": Array [
+          Object {
+            "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1SubnetA0856445RefD2152773",
+          },
+          Object {
+            "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2Subnet0EE6AE15RefB7A9BEAB",
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+        ],
+        "Type": "application",
+      },
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+    },
+    "AlbHttpInternalListener": Object {
+      "Properties": Object {
+        "DefaultActions": Array [
+          Object {
+            "FixedResponseConfig": Object {
+              "ContentType": "text/plain",
+              "MessageBody": "Route Not Found.",
+              "StatusCode": "404",
+            },
+            "Type": "fixed-response",
+          },
+        ],
+        "LoadBalancerArn": Object {
+          "Ref": "Alb",
+        },
+        "Port": 8080,
+        "Protocol": "HTTP",
+      },
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+    },
+    "AlbHttpListener": Object {
+      "Properties": Object {
+        "DefaultActions": Array [
+          Object {
+            "FixedResponseConfig": Object {
+              "ContentType": "text/plain",
+              "MessageBody": "Route Not Found.",
+              "StatusCode": "404",
+            },
+            "Type": "fixed-response",
+          },
+        ],
+        "LoadBalancerArn": Object {
+          "Ref": "Alb",
+        },
+        "Port": 80,
+        "Protocol": "HTTP",
+      },
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+    },
+    "AlbRecord": Object {
+      "Properties": Object {
+        "AliasTarget": Object {
+          "DNSName": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "dualstack.",
+                Object {
+                  "Fn::GetAtt": Array [
+                    "Alb",
+                    "DNSName",
+                  ],
+                },
+              ],
+            ],
+          },
+          "HostedZoneId": Object {
+            "Fn::GetAtt": Array [
+              "Alb",
+              "CanonicalHostedZoneID",
+            ],
+          },
+        },
+        "HostedZoneId": Object {
+          "Ref": "referencetoDemoDevTstZoneEA25F9E7Ref",
+        },
+        "Name": "tst.cosmos.com.",
+        "Type": "A",
+      },
+      "Type": "AWS::Route53::RecordSet",
+    },
+    "AlbSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "SecurityGroup for ALB.",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80,
+          },
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:8080",
+            "FromPort": 8080,
+            "IpProtocol": "tcp",
+            "ToPort": 8080,
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+        ],
+        "VpcId": Object {
+          "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9RefDF8A0FEF",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "Cluster": Object {
+      "Properties": Object {
+        "ClusterName": "CoreDevTstCluster",
+        "ClusterSettings": Array [
+          Object {
+            "Name": "containerInsights",
+            "Value": "enabled",
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+        ],
+      },
+      "Type": "AWS::ECS::Cluster",
+    },
+    "ClusterDefaultAutoScalingGroupASG": Object {
+      "CreationPolicy": Object {
+        "ResourceSignal": Object {
+          "Count": 1,
+        },
+      },
+      "Properties": Object {
+        "LaunchConfigurationName": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupLaunchConfig",
+        },
+        "MaxSize": "4",
+        "MinSize": "1",
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "PropagateAtLaunch": true,
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "PropagateAtLaunch": true,
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "PropagateAtLaunch": true,
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "PropagateAtLaunch": true,
+            "Value": "Tst",
+          },
+          Object {
+            "Key": "Name",
+            "PropagateAtLaunch": true,
+            "Value": "Demo/Dev/Tst/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+        "VPCZoneIdentifier": Array [
+          Object {
+            "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet1SubnetA0856445RefD2152773",
+          },
+          Object {
+            "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAppSubnet2Subnet0EE6AE15RefB7A9BEAB",
+          },
+        ],
+      },
+      "Type": "AWS::AutoScaling::AutoScalingGroup",
+      "UpdatePolicy": Object {
+        "AutoScalingRollingUpdate": Object {
+          "MinSuccessfulInstancesPercent": 100,
+          "PauseTime": "PT10M",
+          "SuspendProcesses": Array [
+            "HealthCheck",
+            "ReplaceUnhealthy",
+            "AZRebalance",
+            "AlarmNotification",
+            "ScheduledActions",
+          ],
+          "WaitOnResourceSignals": true,
+        },
+        "AutoScalingScheduledAction": Object {
+          "IgnoreUnmodifiedGroupSizeProperties": true,
+        },
+      },
+    },
+    "ClusterDefaultAutoScalingGroupDrainECSHookFunction": Object {
+      "DependsOn": Array [
+        "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleDefaultPolicy",
+        "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "ZipFile": "import boto3, json, os, time
+
+ecs = boto3.client('ecs')
+autoscaling = boto3.client('autoscaling')
+
+
+def lambda_handler(event, context):
+  print(json.dumps(event))
+  cluster = os.environ['CLUSTER']
+  snsTopicArn = event['Records'][0]['Sns']['TopicArn']
+  lifecycle_event = json.loads(event['Records'][0]['Sns']['Message'])
+  instance_id = lifecycle_event.get('EC2InstanceId')
+  if not instance_id:
+    print('Got event without EC2InstanceId: %s', json.dumps(event))
+    return
+
+  instance_arn = container_instance_arn(cluster, instance_id)
+  print('Instance %s has container instance ARN %s' % (lifecycle_event['EC2InstanceId'], instance_arn))
+
+  if not instance_arn:
+    return
+
+  task_arns = container_instance_task_arns(cluster, instance_arn)
+  
+  if task_arns:
+    print('Instance ARN %s has task ARNs %s' % (instance_arn, ', '.join(task_arns)))
+
+  while has_tasks(cluster, instance_arn, task_arns):
+    time.sleep(10)
+
+  try:
+    print('Terminating instance %s' % instance_id)
+    autoscaling.complete_lifecycle_action(
+        LifecycleActionResult='CONTINUE',
+        **pick(lifecycle_event, 'LifecycleHookName', 'LifecycleActionToken', 'AutoScalingGroupName'))
+  except Exception as e:
+    # Lifecycle action may have already completed.
+    print(str(e))
+
+
+def container_instance_arn(cluster, instance_id):
+  \\"\\"\\"Turn an instance ID into a container instance ARN.\\"\\"\\"
+  arns = ecs.list_container_instances(cluster=cluster, filter='ec2InstanceId==' + instance_id)['containerInstanceArns']
+  if not arns:
+    return None
+  return arns[0]
+
+def container_instance_task_arns(cluster, instance_arn):
+  \\"\\"\\"Fetch tasks for a container instance ARN.\\"\\"\\"
+  arns = ecs.list_tasks(cluster=cluster, containerInstance=instance_arn)['taskArns']
+  return arns
+
+def has_tasks(cluster, instance_arn, task_arns):
+  \\"\\"\\"Return True if the instance is running tasks for the given cluster.\\"\\"\\"
+  instances = ecs.describe_container_instances(cluster=cluster, containerInstances=[instance_arn])['containerInstances']
+  if not instances:
+    return False
+  instance = instances[0]
+
+  if instance['status'] == 'ACTIVE':
+    # Start draining, then try again later
+    set_container_instance_to_draining(cluster, instance_arn)
+    return True
+
+  task_count = None
+
+  if task_arns:
+    # Fetch details for tasks running on the container instance
+    tasks = ecs.describe_tasks(cluster=cluster, tasks=task_arns)['tasks']
+    if tasks:
+      # Consider any non-stopped tasks as running
+      task_count = sum(task['lastStatus'] != 'STOPPED' for task in tasks) + instance['pendingTasksCount']
+  
+  if not task_count:
+    # Fallback to instance task counts if detailed task information is unavailable
+    task_count = instance['runningTasksCount'] + instance['pendingTasksCount']
+    
+  print('Instance %s has %s tasks' % (instance_arn, task_count))
+
+  return task_count > 0
+
+def set_container_instance_to_draining(cluster, instance_arn):
+  ecs.update_container_instances_state(
+      cluster=cluster,
+      containerInstances=[instance_arn], status='DRAINING')
+
+
+def pick(dct, *keys):
+  \\"\\"\\"Pick a subset of a dict.\\"\\"\\"
+  return {k: v for k, v in dct.items() if k in keys}
+",
+        },
+        "Environment": Object {
+          "Variables": Object {
+            "CLUSTER": Object {
+              "Ref": "Cluster",
+            },
+          },
+        },
+        "Handler": "index.lambda_handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole",
+            "Arn",
+          ],
+        },
+        "Runtime": "python3.6",
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Tst/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+        "Timeout": 310,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "ClusterDefaultAutoScalingGroupDrainECSHookFunctionAllowInvokeDemoDevTstEcsClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopicC394A82F": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "ClusterDefaultAutoScalingGroupDrainECSHookFunction",
+            "Arn",
+          ],
+        },
+        "Principal": "sns.amazonaws.com",
+        "SourceArn": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic",
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Tst/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleDefaultPolicy": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "ec2:DescribeInstances",
+                "ec2:DescribeInstanceAttribute",
+                "ec2:DescribeInstanceStatus",
+                "ec2:DescribeHosts",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": "autoscaling:CompleteLifecycleAction",
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::Join": Array [
+                  "",
+                  Array [
+                    "arn:",
+                    Object {
+                      "Ref": "AWS::Partition",
+                    },
+                    ":autoscaling:ap-southeast-2:2222:autoScalingGroup:*:autoScalingGroupName/",
+                    Object {
+                      "Ref": "ClusterDefaultAutoScalingGroupASG",
+                    },
+                  ],
+                ],
+              },
+            },
+            Object {
+              "Action": Array [
+                "ecs:DescribeContainerInstances",
+                "ecs:DescribeTasks",
+              ],
+              "Condition": Object {
+                "ArnEquals": Object {
+                  "ecs:cluster": Object {
+                    "Fn::GetAtt": Array [
+                      "Cluster",
+                      "Arn",
+                    ],
+                  },
+                },
+              },
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": Array [
+                "ecs:ListContainerInstances",
+                "ecs:SubmitContainerStateChange",
+                "ecs:SubmitTaskStateChange",
+              ],
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::GetAtt": Array [
+                  "Cluster",
+                  "Arn",
+                ],
+              },
+            },
+            Object {
+              "Action": Array [
+                "ecs:UpdateContainerInstancesState",
+                "ecs:ListTasks",
+              ],
+              "Condition": Object {
+                "ArnEquals": Object {
+                  "ecs:cluster": Object {
+                    "Fn::GetAtt": Array [
+                      "Cluster",
+                      "Arn",
+                    ],
+                  },
+                },
+              },
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRoleDefaultPolicy",
+        "Roles": Array [
+          Object {
+            "Ref": "ClusterDefaultAutoScalingGroupDrainECSHookFunctionServiceRole",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "ClusterDefaultAutoScalingGroupDrainECSHookFunctionTopic": Object {
+      "Properties": Object {
+        "Endpoint": Object {
+          "Fn::GetAtt": Array [
+            "ClusterDefaultAutoScalingGroupDrainECSHookFunction",
+            "Arn",
+          ],
+        },
+        "Protocol": "lambda",
+        "TopicArn": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+    "ClusterDefaultAutoScalingGroupInstanceProfile": Object {
+      "Properties": Object {
+        "Roles": Array [
+          Object {
+            "Ref": "ClusterDefaultAutoScalingGroupInstanceRole",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::InstanceProfile",
+    },
+    "ClusterDefaultAutoScalingGroupInstanceRole": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "ec2.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/AmazonSSMFullAccess",
+              ],
+            ],
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Tst/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "ClusterDefaultAutoScalingGroupInstanceRoleDefaultPolicy": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "cloudformation:SignalResource",
+              "Effect": "Allow",
+              "Resource": Object {
+                "Ref": "AWS::StackId",
+              },
+            },
+            Object {
+              "Action": Array [
+                "ecs:DeregisterContainerInstance",
+                "ecs:RegisterContainerInstance",
+                "ecs:Submit*",
+              ],
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::GetAtt": Array [
+                  "Cluster",
+                  "Arn",
+                ],
+              },
+            },
+            Object {
+              "Action": Array [
+                "ecs:Poll",
+                "ecs:StartTelemetrySession",
+              ],
+              "Condition": Object {
+                "ArnEquals": Object {
+                  "ecs:cluster": Object {
+                    "Fn::GetAtt": Array [
+                      "Cluster",
+                      "Arn",
+                    ],
+                  },
+                },
+              },
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": Array [
+                "ecs:DiscoverPollEndpoint",
+                "ecr:GetAuthorizationToken",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "ClusterDefaultAutoScalingGroupInstanceRoleDefaultPolicy",
+        "Roles": Array [
+          Object {
+            "Ref": "ClusterDefaultAutoScalingGroupInstanceRole",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "ClusterDefaultAutoScalingGroupInstanceSecurityGroup": Object {
+      "Properties": Object {
+        "GroupDescription": "Demo/Dev/Tst/Ecs/Cluster/DefaultAutoScalingGroup/InstanceSecurityGroup",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Tst/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+        "VpcId": Object {
+          "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedVpcOutputsDemoDevSharedVpcAC824BE9RefDF8A0FEF",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "ClusterDefaultAutoScalingGroupLaunchConfig": Object {
+      "DependsOn": Array [
+        "ClusterDefaultAutoScalingGroupInstanceRoleDefaultPolicy",
+        "ClusterDefaultAutoScalingGroupInstanceRole",
+      ],
+      "Properties": Object {
+        "IamInstanceProfile": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupInstanceProfile",
+        },
+        "ImageId": Object {
+          "Ref": "SsmParameterValueawsserviceecsoptimizedamiamazonlinux2recommendedimageidC96584B6F00A464EAD1953AFF4B05118Parameter",
+        },
+        "InstanceType": "t3.medium",
+        "SecurityGroups": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "ClusterDefaultAutoScalingGroupInstanceSecurityGroup",
+              "GroupId",
+            ],
+          },
+        ],
+        "UserData": Object {
+          "Fn::Base64": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "#!/bin/bash
+function exitTrap(){
+exitCode=$?
+/opt/aws/bin/cfn-signal --stack ",
+                Object {
+                  "Ref": "AWS::StackName",
+                },
+                " --resource ClusterDefaultAutoScalingGroupASG --region ap-southeast-2 -e $exitCode || echo 'Failed to send Cloudformation Signal'
+}
+trap exitTrap EXIT
+exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+echo ECS_CLUSTER=",
+                Object {
+                  "Ref": "Cluster",
+                },
+                " >> /etc/ecs/ecs.config
+sudo iptables --insert FORWARD 1 --in-interface docker+ --destination 169.254.169.254/32 --jump DROP
+sudo service iptables save
+echo ECS_AWSVPC_BLOCK_IMDS=true >> /etc/ecs/ecs.config
+yum -y install aws-cfn-bootstrap || echo 'Failed to install aws-cfn-bootstrap for cfn-signal bin'",
+              ],
+            ],
+          },
+        },
+      },
+      "Type": "AWS::AutoScaling::LaunchConfiguration",
+    },
+    "ClusterDefaultAutoScalingGroupLifecycleHookDrainHook": Object {
+      "DependsOn": Array [
+        "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleDefaultPolicy",
+        "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRole",
+      ],
+      "Properties": Object {
+        "AutoScalingGroupName": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupASG",
+        },
+        "DefaultResult": "CONTINUE",
+        "HeartbeatTimeout": 300,
+        "LifecycleTransition": "autoscaling:EC2_INSTANCE_TERMINATING",
+        "NotificationTargetARN": Object {
+          "Ref": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic",
+        },
+        "RoleARN": Object {
+          "Fn::GetAtt": Array [
+            "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRole",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::AutoScaling::LifecycleHook",
+    },
+    "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRole": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "autoscaling.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Tst/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleDefaultPolicy": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "kms:Decrypt",
+                "kms:GenerateDataKey",
+              ],
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedKeyArn0AA779F3",
+              },
+            },
+            Object {
+              "Action": "sns:Publish",
+              "Effect": "Allow",
+              "Resource": Object {
+                "Ref": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRoleDefaultPolicy",
+        "Roles": Array [
+          Object {
+            "Ref": "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookRole",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "ClusterDefaultAutoScalingGroupLifecycleHookDrainHookTopic": Object {
+      "Properties": Object {
+        "KmsMasterKeyId": Object {
+          "Fn::ImportValue": "CoreDemoDevGalaxy:DevExportsOutputFnGetAttSharedKeyArn0AA779F3",
+        },
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "Demo/Dev/Tst/Ecs/Cluster/DefaultAutoScalingGroup",
+          },
+        ],
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "RebalanceEvent": Object {
+      "Properties": Object {
+        "EventPattern": Object {
+          "detail-type": Array [
+            "ECS Container Instance State Change",
+          ],
+          "source": Array [
+            "aws.ecs",
+          ],
+        },
+        "State": "ENABLED",
+        "Targets": Array [
+          Object {
+            "Arn": Object {
+              "Fn::GetAtt": Array [
+                "RebalanceFn",
+                "Arn",
+              ],
+            },
+            "Id": "Target0",
+          },
+        ],
+      },
+      "Type": "AWS::Events::Rule",
+    },
+    "RebalanceEventAllowEventRuleDemoDevTstEcsRebalanceFn80FD0488": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "RebalanceFn",
+            "Arn",
+          ],
+        },
+        "Principal": "events.amazonaws.com",
+        "SourceArn": Object {
+          "Fn::GetAtt": Array [
+            "RebalanceEvent",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "RebalanceFn": Object {
+      "DependsOn": Array [
+        "RebalanceRole",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "referencetoDemoDevTstAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3BucketBFF32296Ref",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "referencetoDemoDevTstAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKeyDE4CE853Ref",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "referencetoDemoDevTstAssetParameters27c75438067390b181c32a37a650f8c524802642c1d92fd2f71209fb340c04e8S3VersionKeyDE4CE853Ref",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Environment": Object {
+          "Variables": Object {
+            "CLUSTER": Object {
+              "Ref": "Cluster",
+            },
+            "TIMEOUT": "120",
+          },
+        },
+        "Handler": "index.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "RebalanceRole",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs14.x",
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+        ],
+        "Timeout": 600,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "RebalanceRole": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+        "Policies": Array [
+          Object {
+            "PolicyDocument": Object {
+              "Statement": Array [
+                Object {
+                  "Action": "ecs:*",
+                  "Condition": Object {
+                    "ArnEquals": Object {
+                      "ecs:cluster": Object {
+                        "Fn::GetAtt": Array [
+                          "Cluster",
+                          "Arn",
+                        ],
+                      },
+                    },
+                  },
+                  "Effect": "Allow",
+                  "Resource": "*",
+                },
+              ],
+              "Version": "2012-10-17",
+            },
+            "PolicyName": "default",
+          },
+        ],
+        "Tags": Array [
+          Object {
+            "Key": "cosmos",
+            "Value": "Demo",
+          },
+          Object {
+            "Key": "cosmos:feature",
+            "Value": "Ecs",
+          },
+          Object {
+            "Key": "cosmos:galaxy",
+            "Value": "Dev",
+          },
+          Object {
+            "Key": "cosmos:solarsystem",
+            "Value": "Tst",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+  },
+}
+`;
+
+exports[`Entire App Stack Demo/Link 1`] = `
+Object {
+  "Description": "Link Feature: Resources to link the Cosmos, like Route53 zone delegation",
+  "Resources": Object {
+    "DevZoneDelegation": Object {
+      "Properties": Object {
+        "Comment": "Core Zone Delegation for Dev SolarSystem.",
+        "HostedZoneId": Object {
+          "Fn::ImportValue": "CoreDemoCosmos:ExportsOutputRefRootZone2F3E9CEF",
+        },
+        "Name": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Fn::GetAtt": Array [
+                  "DevZoneDelegationExports",
+                  "CoreDevDevZoneName",
+                ],
+              },
+              ".",
+            ],
+          ],
+        },
+        "ResourceRecords": Object {
+          "Fn::Split": Array [
+            ",",
+            Object {
+              "Fn::GetAtt": Array [
+                "DevZoneDelegationExports",
+                "CoreDevDevZoneNameServers",
+              ],
+            },
+          ],
+        },
+        "TTL": "1800",
+        "Type": "NS",
+      },
+      "Type": "AWS::Route53::RecordSet",
+    },
+    "DevZoneDelegationExports": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "ServiceToken": Object {
+          "Fn::ImportValue": "CoreDemoCosmos:ExportsOutputFnGetAttCustomCrossAccountExportsCustomResourceProviderHandlerArn8CE3D38E",
+        },
+        "assumeRoleArn": "arn:aws:iam::2222:role/CoreCdkCrossAccountRole",
+        "exports": Array [
+          "CoreDevDevZoneName",
+          "CoreDevDevZoneNameServers",
+        ],
+        "shouldErrorIfNotFound": true,
+      },
+      "Type": "Custom::CrossAccountExports",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "TstZoneDelegation": Object {
+      "Properties": Object {
+        "Comment": "Core Zone Delegation for Tst SolarSystem.",
+        "HostedZoneId": Object {
+          "Fn::ImportValue": "CoreDemoCosmos:ExportsOutputRefRootZone2F3E9CEF",
+        },
+        "Name": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              Object {
+                "Fn::GetAtt": Array [
+                  "TstZoneDelegationExports",
+                  "CoreDevTstZoneName",
+                ],
+              },
+              ".",
+            ],
+          ],
+        },
+        "ResourceRecords": Object {
+          "Fn::Split": Array [
+            ",",
+            Object {
+              "Fn::GetAtt": Array [
+                "TstZoneDelegationExports",
+                "CoreDevTstZoneNameServers",
+              ],
+            },
+          ],
+        },
+        "TTL": "1800",
+        "Type": "NS",
+      },
+      "Type": "AWS::Route53::RecordSet",
+    },
+    "TstZoneDelegationExports": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "ServiceToken": Object {
+          "Fn::ImportValue": "CoreDemoCosmos:ExportsOutputFnGetAttCustomCrossAccountExportsCustomResourceProviderHandlerArn8CE3D38E",
+        },
+        "assumeRoleArn": "arn:aws:iam::2222:role/CoreCdkCrossAccountRole",
+        "exports": Array [
+          "CoreDevTstZoneName",
+          "CoreDevTstZoneNameServers",
+        ],
+        "shouldErrorIfNotFound": true,
+      },
+      "Type": "Custom::CrossAccountExports",
+      "UpdateReplacePolicy": "Delete",
     },
   },
 }
@@ -779,16 +4792,16 @@ Object {
     },
   },
   "Parameters": Object {
-    "AssetParameters766cffbf01840acd254eaa809d4dd89dc7059bd53b2a901718994b4e9a0d65f4ArtifactHash": Object {
-      "Description": "Artifact hash for asset \\"766cffbf01840acd254eaa809d4dd89dc7059bd53b2a901718994b4e9a0d65f4\\"",
+    "AssetParameters8d5ab8d00983a90e87c9b3ec9fb0d08ac03c6bf96ad1ead1dd435776f19de266ArtifactHash": Object {
+      "Description": "Artifact hash for asset \\"8d5ab8d00983a90e87c9b3ec9fb0d08ac03c6bf96ad1ead1dd435776f19de266\\"",
       "Type": "String",
     },
-    "AssetParameters766cffbf01840acd254eaa809d4dd89dc7059bd53b2a901718994b4e9a0d65f4S3Bucket": Object {
-      "Description": "S3 bucket for asset \\"766cffbf01840acd254eaa809d4dd89dc7059bd53b2a901718994b4e9a0d65f4\\"",
+    "AssetParameters8d5ab8d00983a90e87c9b3ec9fb0d08ac03c6bf96ad1ead1dd435776f19de266S3Bucket": Object {
+      "Description": "S3 bucket for asset \\"8d5ab8d00983a90e87c9b3ec9fb0d08ac03c6bf96ad1ead1dd435776f19de266\\"",
       "Type": "String",
     },
-    "AssetParameters766cffbf01840acd254eaa809d4dd89dc7059bd53b2a901718994b4e9a0d65f4S3VersionKey": Object {
-      "Description": "S3 key for asset version \\"766cffbf01840acd254eaa809d4dd89dc7059bd53b2a901718994b4e9a0d65f4\\"",
+    "AssetParameters8d5ab8d00983a90e87c9b3ec9fb0d08ac03c6bf96ad1ead1dd435776f19de266S3VersionKey": Object {
+      "Description": "S3 key for asset version \\"8d5ab8d00983a90e87c9b3ec9fb0d08ac03c6bf96ad1ead1dd435776f19de266\\"",
       "Type": "String",
     },
   },
@@ -820,7 +4833,7 @@ Object {
               },
               "/",
               Object {
-                "Ref": "AssetParameters766cffbf01840acd254eaa809d4dd89dc7059bd53b2a901718994b4e9a0d65f4S3Bucket",
+                "Ref": "AssetParameters8d5ab8d00983a90e87c9b3ec9fb0d08ac03c6bf96ad1ead1dd435776f19de266S3Bucket",
               },
               "/",
               Object {
@@ -830,7 +4843,7 @@ Object {
                     "Fn::Split": Array [
                       "||",
                       Object {
-                        "Ref": "AssetParameters766cffbf01840acd254eaa809d4dd89dc7059bd53b2a901718994b4e9a0d65f4S3VersionKey",
+                        "Ref": "AssetParameters8d5ab8d00983a90e87c9b3ec9fb0d08ac03c6bf96ad1ead1dd435776f19de266S3VersionKey",
                       },
                     ],
                   },
@@ -843,7 +4856,7 @@ Object {
                     "Fn::Split": Array [
                       "||",
                       Object {
-                        "Ref": "AssetParameters766cffbf01840acd254eaa809d4dd89dc7059bd53b2a901718994b4e9a0d65f4S3VersionKey",
+                        "Ref": "AssetParameters8d5ab8d00983a90e87c9b3ec9fb0d08ac03c6bf96ad1ead1dd435776f19de266S3VersionKey",
                       },
                     ],
                   },
@@ -1511,7 +5524,7 @@ Object {
                   "Version": "1",
                 },
                 "Configuration": Object {
-                  "EnvironmentVariables": "[{\\"name\\":\\"DIFF\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"false\\"},{\\"name\\":\\"DEPLOY\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"true\\"},{\\"name\\":\\"STACKS\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"-e CoreDemoCosmos CoreDemoMgtGalaxy CoreDemoMgtCiCdSolarSystem CoreDemoDevGalaxy\\"}]",
+                  "EnvironmentVariables": "[{\\"name\\":\\"DIFF\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"false\\"},{\\"name\\":\\"DEPLOY\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"true\\"},{\\"name\\":\\"STACKS\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"-e CoreDemoCosmos CoreDemoMgtGalaxy CoreDemoMgtCiCdSolarSystem CoreDemoDevGalaxy CoreDemoDevDevSolarSystem CoreDemoDevTstSolarSystem CoreDemoLink\\"}]",
                   "ProjectName": Object {
                     "Ref": "CdkPipelineDeploy",
                   },
@@ -1655,10 +5668,10 @@ Object {
             Object {
               "Name": "STACKS",
               "Type": "PLAINTEXT",
-              "Value": "CoreDemoCosmos CoreDemoMgtGalaxy CoreDemoMgtCiCdSolarSystem CoreDemoDevGalaxy",
+              "Value": "CoreDemoCosmos CoreDemoMgtGalaxy CoreDemoMgtCiCdSolarSystem CoreDemoDevGalaxy CoreDemoDevDevSolarSystem CoreDemoDevTstSolarSystem CoreDemoLink",
             },
           ],
-          "Image": "aws/codebuild/standard:4.0",
+          "Image": "aws/codebuild/standard:5.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": true,
           "Type": "LINUX_CONTAINER",
@@ -1672,7 +5685,7 @@ Object {
     \\"install\\": {
       \\"commands\\": [],
       \\"runtime-versions\\": {
-        \\"nodejs\\": \\"12\\"
+        \\"nodejs\\": \\"14\\"
       }
     },
     \\"pre_build\\": {
