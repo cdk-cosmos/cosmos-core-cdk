@@ -17,10 +17,10 @@
     "@aws-cdk/aws-codestarconnections": "^1.104.0",
     "@aws-cdk/aws-ecs": "^1.104.0",
     "@aws-cdk/core": "^1.104.0",
-    "@cdk-cosmos/cdk-credentials-plugin": "^0.8.11",
-    "@cdk-cosmos/core": "^0.8.11",
-    "@cosmos-building-blocks/pipeline": "^0.8.11",
-    "@cosmos-building-blocks/service": "^0.8.11",
+    "@cdk-cosmos/cdk-credentials-plugin": "^0.8.12",
+    "@cdk-cosmos/core": "^0.8.12",
+    "@cosmos-building-blocks/pipeline": "^0.8.12",
+    "@cosmos-building-blocks/service": "^0.8.12",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
